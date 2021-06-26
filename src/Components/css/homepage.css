@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  font-family: "Varela Round", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.header {
+  min-height: 100vh;
+  background: #000046; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.navbar {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 10vh;
+  width: 100%;
+}
+
+.nav-container{
+  margin-left: 1%;
+}
+.nav-head {
+  display: inline;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  transition: 0.3s ease all;
+}
+.nav-links li {
+  list-style-type: none;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.05rem;
+  margin: 0 1.2rem;
+  position: relative;
+}
+
+.nav-links li a::after {
+  position: absolute;
+  content: "";
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #fff;
+  display: block;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+  transition: 0.3s ease all;
+}
+
+.nav-links.nav-active {
+  transform: translateX(0%);
+}
+
+.welcome-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+}
+.welcome-container .welcome-head {
+  font-size: 2.4rem;
+  word-spacing: 3px;
+  color: #eee;
+}
+
+.about-us {
+  margin-top: 3rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid #eee;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.about-us:hover {
+  background-color: #eee;
+  color: rgb(5, 46, 136);
+  transition: 0.3s ease all;
+}
+
+.services {
+  padding: 10vh 10%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#services-head {
+  text-decoration: underline;
+  text-align: center;
+  font-size: 2rem;
+  word-spacing: 4px;
+  position: relative;
+  padding-top: 2rem;
+  margin-bottom: 4rem;
+  z-index: -1;
+}
+#services-head ::after {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 100%;
+  display: block;
+  bottom: -5px;
+  left: 0;
+  background-color: #000;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.service {
+  text-align: center;
+  margin: 2.5rem 2.5rem;
+  padding: 0 1rem;
+  z-index: -1;
+}
+.service h2 {
+  margin: 1rem 0;
+}
+
+p {
+  opacity: 0.8;
+}
+
+@media (max-width: 725px) {
+    .navbar{
+        padding: 1rem;
+    }
+  .navbar .nav-container .nav-head {
+    font-size: 0.8rem;
+  }
+  .nav-links li a {
+    font-size: 0.4rem;
+    margin: 0 0.5rem;
+  }
+  .welcome-container .welcome-head{
+      font-size:1.6rem;
+  }
+  .services .container {
+    flex-wrap: wrap;
+  }
+  .service {
+    margin: 0.8rem 0;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+header {
+  animation: 0.75s ease-out 0s 1 slideInFromLeft;
+}
