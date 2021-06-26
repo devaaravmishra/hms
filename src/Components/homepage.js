@@ -1,13 +1,14 @@
 import React from "react";
 import "./css/homepage.css";
 import Header from "./header";
+import Footer from "./footer";
 const Homepage = () => {
   return (
     <React.Fragment>
       <Header />
       <div className={"services"} id={"services"}>
-        <h1 id={"services-head"}>Services we provide</h1>
-        <div className={"container"}>
+        <h1 id={"services-head"}>Services We Provide</h1>
+        <div className={"container1"}>
           <div className={"service"}>
             <i className={"fa fa-bed fa-3x"}></i>
             <h2>Emergencies</h2>
@@ -30,22 +31,43 @@ const Homepage = () => {
             <i className={"fa fa-medkit fa-3x"}></i>
             <h2>Medical Kit</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-              quas perferendis nam explicabo aspernatur temporibus, ut labore
-              quibusdam consequatur inventore?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+              magni enim, impedit quidem iste incidunt nulla optio provident qui
+              ex.
             </p>
           </div>
+        </div>
+        <div className={"container2"}>
           <div className={"service"}>
             <i className={"fa fa-wheelchair fa-3x"}></i>
             <h2>Wheelchair</h2>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum
-              reprehenderit ullam doloribus, praesentium ad nihil. Corporis
-              assumenda accusantium magnam nam!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+              magni enim, impedit quidem iste incidunt nulla optio provident qui
+              ex.
+            </p>
+          </div>
+          <div className={"service"}>
+            <i className={"fas fa-flask fa-3x"}></i>
+            <h2>Laboratory</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+              magni enim, impedit quidem iste incidunt nulla optio provident qui
+              ex.
+            </p>
+          </div>
+          <div className={"service"}>
+            <i className={"fas fa-phone fa-3x"}></i>
+            <h2>24x7 Availability</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+              magni enim, impedit quidem iste incidunt nulla optio provident qui
+              ex.
             </p>
           </div>
         </div>
       </div>
+      <Footer/>
     </React.Fragment>
   );
 };
