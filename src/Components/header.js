@@ -7,7 +7,10 @@ const Header = () => {
       <Navbar />
       <div className={"welcome-container"}>
         <h1 className={"welcome-head"}>Stay Safe and Secure</h1>
-        <button className={"about-us"}>About-us</button>
+        <a href="#footer" className><button className={"about-us"}>
+          About-us
+        </button>
+        </a>
       </div>
     </header>
   );
