@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
     return(
         <footer>
-            <div className={"footer"}>
+            <div className={"footer"} id={"footer"}>
             <span className={"footer-left"}>&copy; 2021 HOSPITAL All Rights Reserved</span>
                 <ul className={"footer-right"}>
                     <li><a href="https://twitter.com/who?lang=en" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
