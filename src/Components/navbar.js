@@ -16,7 +16,7 @@ const Navbar = () => {
           <a href={"/login"}>Login</a>
         </li>
         <li>
-          <a href={"/signin"}>Sign Up</a>
+          <a href={"/signup"}>Sign Up</a>
         </li>
       </ul>
     </div>
