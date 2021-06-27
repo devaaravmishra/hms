@@ -5,6 +5,8 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
+import LogIn from "./Components/loginpage"
+import SignIn from "./Components/signinpage"
 import Homepage from "./Components/homepage";
 const App = () => {
   return (
@@ -13,6 +15,12 @@ const App = () => {
         <Switch>
           <Route path={"/"} exact>
             <Homepage />
+          </Route>
+          <Route path={"/login"}>
+            <LogIn />
+          </Route>
+          <Route path={"/signup"}>
+            <SignIn />
           </Route>
           <Route path={"/about-us"}>
             <h1>This is about-us page</h1>
