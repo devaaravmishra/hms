@@ -3,8 +3,9 @@ import { useHistory } from "react-router-dom";
 import Axios from "axios";
 import "./css/form.css";
 
-const Signup = () => {
+const Signup = (props) => {
   const history = useHistory();
+  const { setUserState } = props;
   const [user, setUser] = useState({});
 
   const onFormSubmit = async (event) => {
@@ -13,6 +14,7 @@ const Signup = () => {
       .then(({ data }) => {
         console.info(data);
         localStorage.setItem("user", JSON.stringify(data));
+        setUserState(data.user);
         history.push("/");
       })
       .catch((error) => {

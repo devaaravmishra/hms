@@ -9,6 +9,7 @@ const Footer = () => {
         </span>
         <ul className={"footer-right"}>
           <li>
+            { /* eslint-disable-next-line */ }
             <a
               href="https://twitter.com/who?lang=en"
               target="_blank"
@@ -18,6 +19,7 @@ const Footer = () => {
             </a>
           </li>
           <li>
+            { /* eslint-disable-next-line */ }
             <a
               href="https://www.facebook.com/WHO/"
               target="_blank"
@@ -27,6 +29,7 @@ const Footer = () => {
             </a>
           </li>
           <li>
+            { /* eslint-disable-next-line */ }
             <a
               href="https://www.instagram.com/who/?hl=en"
               target="_blank"
