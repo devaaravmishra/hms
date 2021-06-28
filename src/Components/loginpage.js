@@ -1,11 +1,84 @@
-import React from "react";
-import LoginForm from "./loginform";
+import React, { useState } from "react";
+import {useHistory} from "react-router-dom"
+import Axios from "axios";
+import "./css/form.css";
 
 const Login = () => {
+  const history = useHistory();
+  const [credentials, setCredentials] = useState({});
+
+  const onFormSubmit = async (event) => {
+    event.preventDefault();
+    await Axios.post("http://localhost:7000/user/login", credentials)
+      .then(({ data }) => {
+        console.info(data);
+        localStorage.setItem("user", JSON.stringify(data));
+        history.push("/");
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+      .finally(() => {
+        console.info("Login API call finished.");
+      });
+  };
+
+  const toSignUp = () =>{
+    history.push("/signup")
+  }
+
   return (
-    <>
-      <LoginForm />
-    </>
+    <React.Fragment>
+      <div className={"parent-container"}>
+        <form id={"login-container"}>
+          <img
+            src="http://www.simpleimageresizer.com/_uploads/photos/8a5047b0/HealthInsurance_3_16.png"
+            alt={"Health Insurance"}
+          />
+          <br />
+          <br />
+          <div className={"input-container"}>
+            <i className={"fa fa-envelope icon"}></i>
+            <input
+              className={"logininput"}
+              type={"email"}
+              name={"email"}
+              placeholder={"Email *"}
+              required
+              onChange={(e) => {
+                setCredentials({ ...credentials, email: e.target.value });
+              }}
+            />
+          </div>
+          <br />
+          <br />
+          <br />
+          <div className="input-container">
+            <i className="fa fa-lock icon"></i>
+            <input
+              className={"logininput"}
+              type={"password"}
+              name={"password"}
+              placeholder={"Password *"}
+              required
+              onChange={(e) => {
+                setCredentials({ ...credentials, password: e.target.value });
+              }}
+            />
+          </div>
+          <button id={"submit"} type={"submit"} onClick={onFormSubmit}>
+            Login
+          </button>
+          <br />
+          <br />
+          <span className={"spantext"}>Doesn't have one, Create here.</span>
+          <br />
+          <button id={"lastbtn"} type={"button"} onClick={toSignUp}>
+            Sign Up
+          </button>
+        </form>
+      </div>
+    </React.Fragment>
   );
 };
 

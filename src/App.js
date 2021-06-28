@@ -5,9 +5,11 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import LogIn from "./Components/loginpage"
-import SignIn from "./Components/signinpage"
+
+import Login from "./Components/loginpage"
+import Signup from "./Components/signinpage"
 import Homepage from "./Components/homepage";
+
 const App = () => {
   return (
     <Router>
@@ -17,10 +19,10 @@ const App = () => {
             <Homepage />
           </Route>
           <Route path={"/login"}>
-            <LogIn />
+            <Login />
           </Route>
           <Route path={"/signup"}>
-            <SignIn />
+            <Signup />
           </Route>
           <Route path={"/about-us"}>
             <h1>This is about-us page</h1>
