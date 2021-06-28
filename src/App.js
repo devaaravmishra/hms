@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Redirect,
   Route,
   Switch,
 } from "react-router-dom";
-import LogIn from "./Components/loginpage"
-import SignIn from "./Components/signinpage"
+
+import Login from "./Components/loginpage"
+import Signup from "./Components/signuppage"
 import Homepage from "./Components/homepage";
+
 const App = () => {
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    let savedUser = localStorage.getItem("user");
+    if (savedUser && Object.keys(user).length === 0) {
+      setUser(JSON.parse(savedUser).user);
+    }
+  }, [user]);
+
   return (
     <Router>
       <div>
@@ -17,10 +28,10 @@ const App = () => {
             <Homepage />
           </Route>
           <Route path={"/login"}>
-            <LogIn />
+            <Login setUserState={setUser} />
           </Route>
           <Route path={"/signup"}>
-            <SignIn />
+            <Signup setUserState={setUser} />
           </Route>
           <Route path={"/about-us"}>
             <h1>This is about-us page</h1>

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router-dom";
 import Axios from "axios";
 import "./css/form.css";
 
-const Login = (props) => {
+const Signup = (props) => {
   const history = useHistory();
   const { setUserState } = props;
-  const [credentials, setCredentials] = useState({});
+  const [user, setUser] = useState({});
 
   const onFormSubmit = async (event) => {
     event.preventDefault();
-    await Axios.post("http://localhost:7000/user/login", credentials)
+    await Axios.post("http://localhost:7000/user/signup", user)
       .then(({ data }) => {
         console.info(data);
         localStorage.setItem("user", JSON.stringify(data));
@@ -25,18 +25,29 @@ const Login = (props) => {
       });
   };
 
-  const toSignUp = () =>{
-    history.push("/signup")
-  }
-
   return (
     <React.Fragment>
       <div className={"parent-container"}>
-        <form id={"login-container"}>
+        <form id={"signin-container"}>
           <img
             src="http://www.simpleimageresizer.com/_uploads/photos/8a5047b0/HealthInsurance_3_16.png"
             alt={"Health Insurance"}
           />
+          <br />
+          <br />
+          <div className={"input-container"}>
+            <i className={"fa fa-user icon"}></i>
+            <input
+              className={"logininput"}
+              type={"name"}
+              name={"name"}
+              placeholder={"Name"}
+              required
+              onChange={(e) => {
+                setUser({ ...user, name: e.target.value });
+              }}
+            />
+          </div>
           <br />
           <br />
           <div className={"input-container"}>
@@ -45,38 +56,45 @@ const Login = (props) => {
               className={"logininput"}
               type={"email"}
               name={"email"}
-              placeholder={"Email *"}
+              placeholder={"Email"}
               required
               onChange={(e) => {
-                setCredentials({ ...credentials, email: e.target.value });
+                setUser({ ...user, email: e.target.value });
               }}
             />
           </div>
           <br />
           <br />
-          <br />
           <div className="input-container">
-            <i className="fa fa-lock icon"></i>
+            <i className="fa fa-fingerprint icon"></i>
             <input
               className={"logininput"}
               type={"password"}
               name={"password"}
-              placeholder={"Password *"}
+              placeholder={"Password"}
               required
               onChange={(e) => {
-                setCredentials({ ...credentials, password: e.target.value });
+                setUser({ ...user, password: e.target.value });
+              }}
+            />
+          </div>
+          <br />
+          <br />
+          <div className="input-container">
+            <i className="fa fa-clock icon"></i>
+            <input
+              className={"logininput"}
+              type={"number"}
+              name={"age"}
+              placeholder={"Age"}
+              required
+              onChange={(e) => {
+                setUser({ ...user, age: e.target.value });
               }}
             />
           </div>
           <button id={"submit"} type={"submit"} onClick={onFormSubmit}>
-            Login
-          </button>
-          <br />
-          <br />
-          <span className={"spantext"}>Doesn't have one, Create here.</span>
-          <br />
-          <button id={"lastbtn"} type={"button"} onClick={toSignUp}>
-            Sign Up
+            Create
           </button>
         </form>
       </div>
@@ -84,4 +102,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default Signup;
