@@ -9,33 +9,33 @@ const Footer = () => {
         </span>
         <ul className={"footer-right"}>
           <li>
-            { /* eslint-disable-next-line */ }
+            {/* eslint-disable-next-line */}
             <a
               href="https://twitter.com/who?lang=en"
               target="_blank"
               aria-label="Twitter"
             >
-              <i class="fab fa-twitter"></i>
+              <i className={"fab fa-twitter"}></i>
             </a>
           </li>
           <li>
-            { /* eslint-disable-next-line */ }
+            {/* eslint-disable-next-line */}
             <a
               href="https://www.facebook.com/WHO/"
               target="_blank"
               aria-label="Facebook"
             >
-              <i class="fab fa-facebook-f"></i>
+              <i className={"fab fa-facebook-f"}></i>
             </a>
           </li>
           <li>
-            { /* eslint-disable-next-line */ }
+            {/* eslint-disable-next-line */}
             <a
               href="https://www.instagram.com/who/?hl=en"
               target="_blank"
               aria-label="Instagram"
             >
-              <i class="fab fa-instagram"></i>
+              <i className={"fab fa-instagram"}></i>
             </a>
           </li>
         </ul>
