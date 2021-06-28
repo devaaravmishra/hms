@@ -97,6 +97,36 @@
   border-width: 2vh;
   border-radius: 9px;
 }
+#dateinput{
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #d9d9d9;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+#dateinput:hover{
+  background: #f2f2f2;
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#dateinput:focus{
+  background: #f2f2f2;
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
 
 .logininput {
   height: 44px;
@@ -187,4 +217,41 @@
   color: #ffffff;
   border: none;
   transform: translateY(-0.3rem);
+}
+
+#radio-container-head{
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.radio{
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background: none;
+    border: 0;
+    box-shadow: inset 0 0 0 1px #000046;
+    box-shadow: inset 0 0 0 1.5px #000046;
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    transition: box-shadow 150ms cubic-bezier(.95,.15,.5,1.25);
+    pointer-events: none;
+}
+.radio:checked{
+  box-shadow: inset 0 0 0 6px #000046;
+}
+.radio:focus{
+  outline:none;
+}
+.slots-desc{
+  padding:1%;
+  font-weight: bold;
+}
+.radio-text{
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 1.25rem;
+  padding: 0 .534rem;
 }
