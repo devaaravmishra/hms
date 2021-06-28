@@ -9,6 +9,7 @@ import {
 import Login from "./Components/loginpage"
 import Signup from "./Components/signuppage"
 import Homepage from "./Components/homepage";
+import Appointment from "./Components/appointment";
 
 const App = () => {
   const [user, setUser] = useState({});
@@ -32,6 +33,9 @@ const App = () => {
           </Route>
           <Route path={"/signup"}>
             <Signup setUserState={setUser} />
+          </Route>
+          <Route path={"/appointments"}>
+            <Appointment/>
           </Route>
           <Route path={"/about-us"}>
             <h1>This is about-us page</h1>
