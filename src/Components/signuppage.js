@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import Navbar from "./navbar";
+import Footer from "./footer";
 import Axios from "axios";
+import logo from "./imgs/logo.png";
 import "./css/form.css";
 
 const Signup = (props) => {
@@ -14,7 +17,7 @@ const Signup = (props) => {
       .then(({ data }) => {
         console.info(data);
         localStorage.setItem("user", JSON.stringify(data));
-        setUserState(data.user);
+        setUserState(data);
         history.push("/");
       })
       .catch((error) => {
@@ -27,10 +30,12 @@ const Signup = (props) => {
 
   return (
     <React.Fragment>
+      <div id={"super-container"}>
+        <Navbar/>
       <div className={"parent-container"}>
         <form id={"signin-container"}>
           <img
-            src="http://www.simpleimageresizer.com/_uploads/photos/8a5047b0/HealthInsurance_3_16.png"
+            src={logo}
             alt={"Health Insurance"}
           />
           <br />
@@ -98,6 +103,8 @@ const Signup = (props) => {
           </button>
         </form>
       </div>
+      </div>
+      <Footer/>
     </React.Fragment>
   );
 };

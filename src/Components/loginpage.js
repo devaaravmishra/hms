@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import {useHistory} from "react-router-dom"
+import Navbar from "./navbar";
+import Footer from "./footer";
+import { useHistory } from "react-router-dom";
 import Axios from "axios";
+import logo from "./imgs/logo.png";
 import "./css/form.css";
 
 const Login = (props) => {
@@ -25,61 +28,62 @@ const Login = (props) => {
       });
   };
 
-  const toSignUp = () =>{
-    history.push("/signup")
-  }
+  const toSignUp = () => {
+    history.push("/signup");
+  };
 
   return (
     <React.Fragment>
-      <div className={"parent-container"}>
-        <form id={"login-container"}>
-          <img
-            src="http://www.simpleimageresizer.com/_uploads/photos/8a5047b0/HealthInsurance_3_16.png"
-            alt={"Health Insurance"}
-          />
-          <br />
-          <br />
-          <div className={"input-container"}>
-            <i className={"fa fa-envelope icon"}></i>
-            <input
-              className={"logininput"}
-              type={"email"}
-              name={"email"}
-              placeholder={"Email *"}
-              required
-              onChange={(e) => {
-                setCredentials({ ...credentials, email: e.target.value });
-              }}
-            />
-          </div>
-          <br />
-          <br />
-          <br />
-          <div className="input-container">
-            <i className="fa fa-lock icon"></i>
-            <input
-              className={"logininput"}
-              type={"password"}
-              name={"password"}
-              placeholder={"Password *"}
-              required
-              onChange={(e) => {
-                setCredentials({ ...credentials, password: e.target.value });
-              }}
-            />
-          </div>
-          <button id={"submit"} type={"submit"} onClick={onFormSubmit}>
-            Login
-          </button>
-          <br />
-          <br />
-          <span className={"spantext"}>Doesn't have one, Create here.</span>
-          <br />
-          <button id={"lastbtn"} type={"button"} onClick={toSignUp}>
-            Sign Up
-          </button>
-        </form>
+      <div id={"super-container"}>
+        <Navbar />
+        <div className={"parent-container"}>
+          <form id={"login-container"}>
+            <img src={logo} alt={"Health Insurance"} />
+            <br />
+            <br />
+            <div className={"input-container"}>
+              <i className={"fa fa-envelope icon"}></i>
+              <input
+                className={"logininput"}
+                type={"email"}
+                name={"email"}
+                placeholder={"Email *"}
+                required
+                onChange={(e) => {
+                  setCredentials({ ...credentials, email: e.target.value });
+                }}
+              />
+            </div>
+            <br />
+            <br />
+            <br />
+            <div className="input-container">
+              <i className="fa fa-lock icon"></i>
+              <input
+                className={"logininput"}
+                type={"password"}
+                name={"password"}
+                placeholder={"Password *"}
+                required
+                onChange={(e) => {
+                  setCredentials({ ...credentials, password: e.target.value });
+                }}
+              />
+            </div>
+            <button id={"submit"} type={"submit"} onClick={onFormSubmit}>
+              Login
+            </button>
+            <br />
+            <br />
+            <span className={"spantext"}>Doesn't have one, Create here.</span>
+            <br />
+            <button id={"lastbtn"} type={"button"} onClick={toSignUp}>
+              Sign Up
+            </button>
+          </form>
+        </div>
       </div>
+      <Footer />
     </React.Fragment>
   );
 };
