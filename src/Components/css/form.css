@@ -3,13 +3,26 @@
 * {
   font-family: "Varela Round", sans-serif;
 }
-
+#super-container{
+  width:100%;
+  background: #000046; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding-bottom: 10%;
+}
 .parent-container {
-  background-color: #ffffff;
   width: 60%;
   height: 70%;
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 5%;
   border-radius: 10px;
   text-align: center;
 }
@@ -107,6 +120,15 @@
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
+
+.logininput:focus {
+  background: #f2f2f2;
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
 #submit {
   margin-top: 15%;
   height: 3rem;
@@ -130,6 +152,14 @@
   cursor: pointer;
   transform: translateY(-0.3rem);
 }
+#submit:focus {
+  background-color: #000046;
+  color: #ffffff;
+  border: 2px solid #000046;
+  transition: 0.3s;
+  cursor: pointer;
+  transform: translateY(-0.3rem);
+}
 
 #lastbtn {
   color: #000046;
@@ -144,6 +174,14 @@
   transition: transform 350ms;
 }
 #lastbtn:hover {
+  cursor: pointer;
+  background-color: #000046;
+  color: #ffffff;
+  border: none;
+  transform: translateY(-0.3rem);
+}
+
+#lastbtn:focus {
   cursor: pointer;
   background-color: #000046;
   color: #ffffff;
