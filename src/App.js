@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import Login from "./Components/loginpage"
-import Signup from "./Components/signinpage"
+import Signup from "./Components/signuppage"
 import Homepage from "./Components/homepage";
 
 const App = () => {
