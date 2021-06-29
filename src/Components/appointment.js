@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import "./css/form.css";
 import logo from "./imgs/Doctor_20.png";
 
-const Appointment = () => {
-    const convertDate = () => {
-        var dte = document.getElementById("dateinput").value;
-        var dd =dte.getDate();
-        var yy = dte.getFullYear();
-        var mm = dte.getMonth();
-        var utc_date =Date.UTC(yy,mm,dd);
-        // console.log("utc date:",utc_date);
-    }
-    convertDate();
+import Axios from "axios";
+const Appointment = (props) => {
+  const [appointment, setAppointment] = useState({});
+  const {user} = props;
+  const onMakeAppointment = async (e) => {
+    e.preventDefault();
+    await Axios.post("http://localhost:7000/user/makeApt", {
+      ...appointment, pid: user._id,
+    })
+      .then(() => {
+        window.alert("Your appointment successfully scheduled.");
+      })
+      .catch((error) => {
+        console.error("Some error occurred while making appointment", error);
+      });
+  };
   return (
     <React.Fragment>
       <div id={"super-container"}>
@@ -31,6 +37,12 @@ const Appointment = () => {
                 name={"date"}
                 placeholder={"Date *"}
                 required
+                onChange={(e) => {
+                  setAppointment({
+                    ...appointment,
+                    date: Date.parse(e.target.value),
+                  });
+                }}
               />
             </div>
             <br />
@@ -39,23 +51,52 @@ const Appointment = () => {
               <h3 id={"radio-container-head"}>Choose time slot</h3>
               <br />
               <br />
-              <label for={"option-one"}>
-              <input className={"radio"} type="radio" name="slot" id={"option-one"} tabindex="1"/>
-              <span className={"radio-text"}>1</span>&nbsp;&nbsp;
+              <label>
+                <input
+                  className={"radio"}
+                  type="radio"
+                  name="slot"
+                  tabIndex="1"
+                  value={1}
+                  onChange={(e) => {
+                    setAppointment({ ...appointment, slot: e.target.value });
+                  }}
+                />
+                <span className={"radio-text"}>1</span>&nbsp;&nbsp;
               </label>
-              <label  for={"option-two"}>
-              <input className={"radio"} type="radio" name="slot" id={"option-two"} tabindex="2"/>
-              <span className={"radio-text"}>2</span>&nbsp;&nbsp;
+              <label>
+                <input
+                  className={"radio"}
+                  type="radio"
+                  name="slot"
+                  tabIndex="2"
+                  value={2}
+                  onChange={(e) => {
+                    setAppointment({ ...appointment, slot: e.target.value });
+                  }}
+                />
+                <span className={"radio-text"}>2</span>&nbsp;&nbsp;
               </label>
-              <label for={"option-three"}>
-              <input className={"radio"} type="radio" name="slot" id={"option-three"} tabindex="3"/>
-              <span className={"radio-text"}>3</span>
+              <label>
+                <input
+                  className={"radio"}
+                  type="radio"
+                  name="slot"
+                  tabIndex="3"
+                  value={3}
+                  onChange={(e) => {
+                    setAppointment({ ...appointment, slot: e.target.value });
+                  }}
+                />
+                <span className={"radio-text"}>3</span>
               </label>
-              <br/>
-              <br/>
-                <span className={"slots-desc"}>1. Morning</span><span className={"slots-desc"}>&nbsp;&nbsp;2. Afternoon</span><span className={"slots-desc"}>&nbsp;&nbsp;3. Evening</span>
+              <br />
+              <br />
+              <span className={"slots-desc"}>1. Morning</span>
+              <span className={"slots-desc"}>&nbsp;&nbsp;2. Afternoon</span>
+              <span className={"slots-desc"}>&nbsp;&nbsp;3. Evening</span>
             </div>
-            <button id={"submit"} type={"submit"}>
+            <button id={"submit"} type={"submit"} onClick={onMakeAppointment}>
               Make
             </button>
             <br />
