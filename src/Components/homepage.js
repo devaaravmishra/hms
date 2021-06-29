@@ -1,8 +1,29 @@
-import React from "react";
+import React ,{useEffect,useRef} from "react";
 import "./css/homepage.css";
 import Header from "./header";
 import Footer from "./footer";
-const Homepage = () => {
+import {useHistory} from "react-router-dom";
+const Homepage = (props) => {
+  const history = useHistory();
+  const {user} = props
+  const loggedIn = useRef(false);
+  useEffect(() =>{
+    let savedUser = localStorage.getItem("user");
+    if(savedUser && Object.keys(user).length > 0){
+      loggedIn.current = true;
+    }
+  },[user]);
+  const onAppointmentBook =()=>{
+    if(loggedIn.current){
+      history.push("/appointments")
+      window.scrollTo(0, 0)
+    }
+    window.alert("Please Log in to Book an Appointment!");
+    setTimeout(() => {
+      history.push("/login");
+      window.scrollTo(0, 0)
+    }, 3000);
+  }
   return (
     <React.Fragment>
       <Header />
@@ -66,6 +87,12 @@ const Homepage = () => {
             </p>
           </div>
         </div>
+      </div>
+      <div id={"book-appointment"}>
+        <h2 id={"book-apt-head"}>Not feeling well? book an appointment with our expertise!</h2>
+        <button id={"book-btn"} onClick={onAppointmentBook}>
+          Book
+        </button>
       </div>
       <Footer/>
     </React.Fragment>
