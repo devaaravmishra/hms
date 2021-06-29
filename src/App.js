@@ -35,7 +35,7 @@ const App = () => {
             <Signup setUserState={setUser} />
           </Route>
           <Route path={"/appointments"}>
-            <Appointment/>
+            <Appointment user={user}/>
           </Route>
           <Route path={"/about-us"}>
             <h1>This is about-us page</h1>
