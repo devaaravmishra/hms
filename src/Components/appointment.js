@@ -30,7 +30,7 @@ const Appointment = (props) => {
             <br />
             <br />
             <div className={"input-container"}>
-              <i class="fa fa-calendar-check icon"></i>
+              <i className={"fa fa-calendar-check icon"}></i>
               <input
                 id={"dateinput"}
                 type={"date"}
@@ -97,7 +97,7 @@ const Appointment = (props) => {
               <span className={"slots-desc"}>&nbsp;&nbsp;3. Evening</span>
             </div>
             <button id={"submit"} type={"submit"} onClick={onMakeAppointment}>
-              Make
+              Book
             </button>
             <br />
             <br />
