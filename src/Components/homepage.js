@@ -7,9 +7,9 @@ import Footer from "./footer";
 const Homepage = () => {
   const history = useHistory();
 
-  const onAppointmentBook =()=>{
-      history.push("/appointments")
-  }
+  const onAppointmentBook = () => {
+    history.push("/appointments");
+  };
 
   return (
     <React.Fragment>
@@ -76,12 +76,14 @@ const Homepage = () => {
         </div>
       </div>
       <div id={"book-appointment"}>
-        <h2 id={"book-apt-head"}>Not feeling well? book an appointment with our expertise!</h2>
+        <h2 id={"book-apt-head"}>
+          Not feeling well? book an appointment with our expertise!
+        </h2>
         <button id={"book-btn"} onClick={onAppointmentBook}>
           Book
         </button>
       </div>
-      <Footer/>
+      <Footer />
     </React.Fragment>
   );
 };

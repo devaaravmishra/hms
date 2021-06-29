@@ -7,9 +7,8 @@ const Header = () => {
       <Navbar />
       <div className={"welcome-container"}>
         <h1 className={"welcome-head"}>Stay Safe and Secure</h1>
-        <a href="#footer"><button className={"about-us"}>
-          About-us
-        </button>
+        <a href="#footer">
+          <button className={"about-us"}>About-us</button>
         </a>
       </div>
     </header>

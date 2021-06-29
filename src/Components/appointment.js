@@ -12,18 +12,19 @@ const Appointment = (props) => {
   const history = useHistory();
 
   useEffect(() => {
-    if ( !loggedIn.current ) {
+    if (!loggedIn.current) {
       window.alert("Login to make an appointment");
       setTimeout(() => {
         history.push("/login");
-      }, 100)
+      }, 100);
     }
-  })
+  });
 
   const onMakeAppointment = async (e) => {
     e.preventDefault();
     await Axios.post("http://localhost:7000/user/makeApt", {
-      ...appointment, pid: user._id,
+      ...appointment,
+      pid: user._id,
     })
       .then(() => {
         window.alert("Your appointment successfully scheduled.");

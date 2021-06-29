@@ -6,8 +6,8 @@ import {
   Switch,
 } from "react-router-dom";
 
-import Login from "./Components/loginpage"
-import Signup from "./Components/signuppage"
+import Login from "./Components/loginpage";
+import Signup from "./Components/signuppage";
 import Homepage from "./Components/homepage";
 import Appointment from "./Components/appointment";
 
@@ -17,7 +17,7 @@ const App = () => {
 
   useEffect(() => {
     let savedUser = localStorage.getItem("user");
-    if (!(loggedIn.current) && savedUser) {
+    if (!loggedIn.current && savedUser) {
       setUser(JSON.parse(savedUser).user);
       loggedIn.current = true;
     }
@@ -28,7 +28,7 @@ const App = () => {
       <div>
         <Switch>
           <Route path={"/"} exact>
-            <Homepage user={user}/>
+            <Homepage user={user} />
           </Route>
           <Route path={"/login"}>
             <Login setUserState={setUser} />
