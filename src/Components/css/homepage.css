@@ -266,3 +266,34 @@ header {
 footer{
   animation: 0.75s ease-out 0s 1 slideInFromLeft;
 }
+
+#book-appointment{
+  min-height: 18vh;
+  text-align: center;
+}
+
+#book-btn{
+  margin-top: 3rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid  rgb(5, 46, 136);;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: rgb(5, 46, 136);
+  border-radius: 3px;
+  cursor: pointer; 
+}
+
+#book-btn:hover{
+  background-color: rgb(5, 46, 136);;
+  color:#eee;
+  transition: 0.3s ease all;
+}
+#book-apt-head{
+ font-family: "Varela Round", sans-serif; 
+ text-transform: capitalize;
+ word-spacing: .5rem;
+ text-decoration: underline;
+}
