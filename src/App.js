@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import {
   BrowserRouter as Router,
   Redirect,
@@ -13,11 +13,13 @@ import Appointment from "./Components/appointment";
 
 const App = () => {
   const [user, setUser] = useState({});
+  const loggedIn = useRef(false);
 
   useEffect(() => {
     let savedUser = localStorage.getItem("user");
-    if (savedUser && Object.keys(user).length === 0) {
+    if (!(loggedIn.current) && savedUser) {
       setUser(JSON.parse(savedUser).user);
+      loggedIn.current = true;
     }
   }, [user]);
 
