@@ -1,29 +1,16 @@
-import React ,{useEffect,useRef} from "react";
+import React from "react";
+import { useHistory } from "react-router-dom";
 import "./css/homepage.css";
 import Header from "./header";
 import Footer from "./footer";
-import {useHistory} from "react-router-dom";
-const Homepage = (props) => {
+
+const Homepage = () => {
   const history = useHistory();
-  const {user} = props
-  const loggedIn = useRef(false);
-  useEffect(() =>{
-    let savedUser = localStorage.getItem("user");
-    if(savedUser && Object.keys(user).length > 0){
-      loggedIn.current = true;
-    }
-  },[user]);
+
   const onAppointmentBook =()=>{
-    if(loggedIn.current){
       history.push("/appointments")
-      window.scrollTo(0, 0)
-    }
-    window.alert("Please Log in to Book an Appointment!");
-    setTimeout(() => {
-      history.push("/login");
-      window.scrollTo(0, 0)
-    }, 3000);
   }
+
   return (
     <React.Fragment>
       <Header />

@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
+import { useHistory } from "react-router-dom";
 import "./css/form.css";
 import logo from "./imgs/Doctor_20.png";
 
 import Axios from "axios";
 const Appointment = (props) => {
   const [appointment, setAppointment] = useState({});
-  const {user} = props;
+  const { user, loggedIn } = props;
+  const history = useHistory();
+
+  useEffect(() => {
+    if ( !loggedIn.current ) {
+      window.alert("Login to make an appointment");
+      setTimeout(() => {
+        history.push("/login");
+      }, 100)
+    }
+  })
+
   const onMakeAppointment = async (e) => {
     e.preventDefault();
     await Axios.post("http://localhost:7000/user/makeApt", {
@@ -20,6 +32,7 @@ const Appointment = (props) => {
         console.error("Some error occurred while making appointment", error);
       });
   };
+
   return (
     <React.Fragment>
       <div id={"super-container"}>
