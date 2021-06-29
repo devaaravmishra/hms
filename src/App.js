@@ -28,7 +28,7 @@ const App = () => {
       <div>
         <Switch>
           <Route path={"/"} exact>
-            <Homepage />
+            <Homepage user={user}/>
           </Route>
           <Route path={"/login"}>
             <Login setUserState={setUser} />
