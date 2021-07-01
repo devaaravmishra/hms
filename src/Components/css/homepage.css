@@ -122,6 +122,7 @@ body {
 }
 #services-head {
   text-decoration: underline;
+  text-transform: uppercase;
   text-align: center;
   font-size: 2rem;
   word-spacing: 4px;
@@ -146,15 +147,12 @@ body {
 .service {
   text-align: center;
   margin: 2.5rem 2.5rem;
-  padding: 0 1rem;
+  padding: 0 6rem;
 }
 .service h2 {
   margin: 1rem 0;
 }
 
-p {
-  opacity: 0.8;
-}
 .footer {
   background:#02091a;
   padding: 5% 0;
@@ -229,13 +227,17 @@ p {
     font-size: 1.5rem;
   }
   .service {
-    margin: 0.8rem 0;
+    margin: 1.5rem 1.5rem;
   }
   .service > h2 {
     font-size: 1.2rem;
   }
-  .service > p {
-    font-size: x-small;
+  #book-apt-head{
+    font-size: 0.6rem;
+    word-spacing:0;
+  }
+  #book-appointment{
+    padding:3%;
   }
   .footer-left{
     font-size:.4rem;
@@ -244,7 +246,6 @@ p {
     height: 35px;
     width: 35px;
   }
-
   .footer-bottom-text{
     font-size:.5rem;
   }
@@ -268,7 +269,7 @@ footer{
 }
 
 #book-appointment{
-  min-height: 18vh;
+  min-height: 20vh;
   text-align: center;
 }
 
@@ -293,7 +294,7 @@ footer{
 }
 #book-apt-head{
  font-family: "Varela Round", sans-serif; 
- text-transform: capitalize;
  word-spacing: .5rem;
  text-decoration: underline;
+ text-transform: uppercase;
 }
