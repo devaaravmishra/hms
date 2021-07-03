@@ -248,6 +248,7 @@
 .slots-desc{
   padding:1%;
   font-weight: bold;
+  font-size: smaller;
 }
 .radio-text{
   vertical-align: middle;
