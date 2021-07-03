@@ -6,13 +6,16 @@ import {
   Switch,
 } from "react-router-dom";
 
+import Axios from "axios";
 import Login from "./Components/loginpage";
 import Signup from "./Components/signuppage";
 import Homepage from "./Components/homepage";
 import Appointment from "./Components/appointment";
+import AppointmentPage from "./Components/appointmentpage";
 
 const App = () => {
   const [user, setUser] = useState({});
+  const isAppoined = useRef(false);
   const loggedIn = useRef(false);
 
   useEffect(() => {
@@ -23,12 +26,23 @@ const App = () => {
     }
   }, [user]);
 
+  const fetchAppointments = async () => {
+    await Axios.get(`http://localhost:7000/user/getApt/${user._id}`)
+      .then(({ data }) => {
+        isAppoined.current = true;
+      })
+  };
+
+  if(loggedIn.current && savedUser) {
+  fetchAppointments();
+  }
+
   return (
     <Router>
       <div>
         <Switch>
           <Route path={"/"} exact>
-            <Homepage user={user} />
+            <Homepage/>
           </Route>
           <Route path={"/login"}>
             <Login setUserState={setUser} />
@@ -39,8 +53,11 @@ const App = () => {
           <Route path={"/appointments"}>
             <Appointment user={user} loggedIn={loggedIn} />
           </Route>
+          <Route path={"/appointmentpage"}>
+            <AppointmentPage user={user} loggedIn={loggedIn}/>
+          </Route>
           <Route path={"/about-us"}>
-            <h1>This is about-us page</h1>
+            <Redirect to={"/#about-us"} />
           </Route>
           <Route path={"/404"}>
             <h1>Page not found</h1>
