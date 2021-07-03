@@ -15,7 +15,7 @@ const Footer = () => {
               target="_blank"
               aria-label="Twitter"
             >
-              <i className={"fab fa-twitter"}></i>
+              <i className={"fab fa-twitter foot-icon"}></i>
             </a>
           </li>
           <li>
@@ -25,7 +25,7 @@ const Footer = () => {
               target="_blank"
               aria-label="Facebook"
             >
-              <i className={"fab fa-facebook-f"}></i>
+              <i className={"fab fa-facebook-f foot-icon"}></i>
             </a>
           </li>
           <li>
@@ -35,7 +35,7 @@ const Footer = () => {
               target="_blank"
               aria-label="Instagram"
             >
-              <i className={"fab fa-instagram"}></i>
+              <i className={"fab fa-instagram foot-icon"}></i>
             </a>
           </li>
         </ul>
