@@ -106,9 +106,9 @@ const Appointment = (props) => {
               </label>
               <br />
               <br />
-              <span className={"slots-desc"}>1. Morning</span>
-              <span className={"slots-desc"}>&nbsp;&nbsp;2. Afternoon</span>
-              <span className={"slots-desc"}>&nbsp;&nbsp;3. Evening</span>
+              <span className={"slots-desc"}>1. 7AM - 10AM</span>
+              <span className={"slots-desc"}>&nbsp;&nbsp;2. 12PM - 4PM</span>
+              <span className={"slots-desc"}>&nbsp;&nbsp;3. 6PM - 11 PM</span>
             </div>
             <button id={"submit"} type={"submit"} onClick={onMakeAppointment}>
               Book
