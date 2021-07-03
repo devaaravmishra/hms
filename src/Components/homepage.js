@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import "./css/homepage.css";
+import "./css/main.css";
 import Header from "./header";
 import Footer from "./footer";
 
@@ -9,7 +9,6 @@ const Homepage = () => {
 
   const onAppointmentBook = () => {
     history.push("/appointments");
-    window.scrollTo(0, 0);
   };
 
   return (
@@ -20,36 +19,36 @@ const Homepage = () => {
         <div className={"container1"}>
           <div className={"service"}>
             <i className={"fa fa-bed fa-3x"}></i>
-            <h2>Emergencies</h2>
+            <h4>Emergencies</h4>
           </div>
           <div className={"service"}>
             <i className={"fa fa-ambulance fa-3x"}></i>
-            <h2>Ambulance</h2>
+            <h4>Ambulance</h4>
           </div>
           <div className={"service"}>
             <i className={"fa fa-medkit fa-3x"}></i>
-            <h2>Medical Kit</h2>
+            <h4>Medical Kit</h4>
           </div>
         </div>
         <div className={"container2"}>
           <div className={"service"}>
             <i className={"fa fa-wheelchair fa-3x"}></i>
-            <h2>Wheelchair</h2>
+            <h4>Wheelchair</h4>
           </div>
           <div className={"service"}>
             <i className={"fas fa-flask fa-3x"}></i>
-            <h2>Laboratory</h2>
+            <h4>Laboratory</h4>
           </div>
           <div className={"service"}>
             <i className={"fas fa-phone fa-3x"}></i>
-            <h2>24x7<br/>Availability</h2>
+            <h4>24x7<br/>Availability</h4>
           </div>
         </div>
       </div>
       <div id={"book-appointment"}>
-        <h2 id={"book-apt-head"}>
-          Not feeling well? Book an appointment with our Expertise!
-        </h2>
+        <h4 id={"book-apt-head"}>
+          Its hassle free, book an appointment with our experts online!
+        </h4>
         <button id={"book-btn"} onClick={onAppointmentBook}>
           Book
         </button>
