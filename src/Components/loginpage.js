@@ -6,14 +6,13 @@ import Axios from "axios";
 import logo from "./imgs/logo.png";
 import "./css/form.css";
 
-const Login = (props) => {
+const Login = ({baseURL, setUserState}) => {
   const history = useHistory();
-  const { setUserState } = props;
   const [credentials, setCredentials] = useState({});
 
   const onFormSubmit = async (event) => {
     event.preventDefault();
-    await Axios.post("http://localhost:7000/user/login", credentials)
+    await Axios.post(`http://hmsystem-backend.herokuapp.com/user/login`, credentials)
       .then(({ data }) => {
         console.info(data);
         localStorage.setItem("user", JSON.stringify(data));

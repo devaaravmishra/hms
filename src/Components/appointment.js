@@ -6,9 +6,8 @@ import "./css/form.css";
 import logo from "./imgs/Doctor_20.png";
 
 import Axios from "axios";
-const Appointment = (props) => {
+const Appointment = ({baseURL, user, loggedIn}) => {
   const [appointment, setAppointment] = useState({});
-  const { user, loggedIn } = props;
   const history = useHistory();
 
   useEffect(() => {
@@ -22,7 +21,7 @@ const Appointment = (props) => {
 
   const onMakeAppointment = async (e) => {
     e.preventDefault();
-    await Axios.post("http://localhost:7000/user/makeApt", {
+    await Axios.post(`http://hmsystem-backend.herokuapp.com/user/makeApt`, {
       ...appointment,
       pid: user._id,
     })

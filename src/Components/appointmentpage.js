@@ -6,15 +6,14 @@ import AppointmentCard from "./apt-cards";
 import { useHistory } from "react-router";
 import "./css/main.css";
 
-const AppointmentPage = (props) => {
-  const { user, loggedIn } = props;
+const AppointmentPage = ({baseURL, user, loggedIn}) => {
   const [appointments, setAppointments] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
     if(loggedIn.current){
       const fetchAppointments = async () => {
-        await Axios.get(`http://localhost:7000/user/getApt/${user._id}`)
+        await Axios.get(`http://hmsystem-backend.herokuapp.com/user/getApt/${user._id}`)
           .then(({ data: foundAppointments }) => {
             console.info(
               `Appointments were found for user with name:${user.name}`

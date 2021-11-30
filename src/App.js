@@ -13,13 +13,17 @@ import Homepage from "./Components/homepage";
 import Appointment from "./Components/appointment";
 import AppointmentPage from "./Components/appointmentpage";
 
+require("dotenv").config();
+
+const {BASE_URL} = process.env;
+
 const App = () => {
   const [user, setUser] = useState({});
   const isAppoined = useRef(false);
   const loggedIn = useRef(false);
 
   useEffect(() => {
-    let savedUser = localStorage.getItem("user");
+    const savedUser = localStorage.getItem("user");
     if (!loggedIn.current && savedUser) {
       setUser(JSON.parse(savedUser).user);
       loggedIn.current = true;
@@ -27,13 +31,13 @@ const App = () => {
   }, [user]);
 
   const fetchAppointments = async () => {
-    await Axios.get(`http://localhost:7000/user/getApt/${user._id}`)
+    await Axios.get(`http://hmsystem-backend.herokuapp.com/user/getApt/${user._id}`)
       .then(({ data }) => {
         isAppoined.current = true;
       })
   };
 
-  if(loggedIn.current && savedUser) {
+  if(loggedIn.current) {
   fetchAppointments();
   }
 
@@ -44,17 +48,17 @@ const App = () => {
           <Route path={"/"} exact>
             <Homepage/>
           </Route>
-          <Route path={"/login"}>
-            <Login setUserState={setUser} />
+          <Route path={"/login"} >
+            <Login setUserState={setUser} baseURL={BASE_URL}/>
           </Route>
-          <Route path={"/signup"}>
-            <Signup setUserState={setUser} />
+          <Route path={"/signup"} >
+            <Signup setUserState={setUser} baseURL={BASE_URL}/>
           </Route>
-          <Route path={"/appointments"}>
-            <Appointment user={user} loggedIn={loggedIn} />
+          <Route path={"/appointments"} >
+            <Appointment user={user} loggedIn={loggedIn} baseURL={BASE_URL}/>
           </Route>
-          <Route path={"/appointmentpage"}>
-            <AppointmentPage user={user} loggedIn={loggedIn}/>
+          <Route path={"/appointmentpage"} >
+            <AppointmentPage user={user} loggedIn={loggedIn} baseURL={BASE_URL}/>
           </Route>
           <Route path={"/about-us"}>
             <Redirect to={"/#about-us"} />
