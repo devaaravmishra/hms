@@ -21,7 +21,7 @@ const Appointment = ({baseURL, user, loggedIn}) => {
 
   const onMakeAppointment = async (e) => {
     e.preventDefault();
-    await Axios.post(`http://hmsystem-backend.herokuapp.com/user/makeApt`, {
+    await Axios.post(`https://hmsystem-backend.herokuapp.com/user/makeApt`, {
       ...appointment,
       pid: user._id,
     })

@@ -13,7 +13,7 @@ const AppointmentPage = ({baseURL, user, loggedIn}) => {
   useEffect(() => {
     if(loggedIn.current){
       const fetchAppointments = async () => {
-        await Axios.get(`http://hmsystem-backend.herokuapp.com/user/getApt/${user._id}`)
+        await Axios.get(`https://hmsystem-backend.herokuapp.com/user/getApt/${user._id}`)
           .then(({ data: foundAppointments }) => {
             console.info(
               `Appointments were found for user with name:${user.name}`

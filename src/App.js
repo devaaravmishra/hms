@@ -31,7 +31,7 @@ const App = () => {
   }, [user]);
 
   const fetchAppointments = async () => {
-    await Axios.get(`http://hmsystem-backend.herokuapp.com/user/getApt/${user._id}`)
+    await Axios.get(`https://hmsystem-backend.herokuapp.com/user/getApt/${user._id}`)
       .then(({ data }) => {
         isAppoined.current = true;
       })

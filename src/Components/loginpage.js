@@ -12,7 +12,7 @@ const Login = ({baseURL, setUserState}) => {
 
   const onFormSubmit = async (event) => {
     event.preventDefault();
-    await Axios.post(`http://hmsystem-backend.herokuapp.com/user/login`, credentials)
+    await Axios.post(`https://hmsystem-backend.herokuapp.com/user/login`, credentials)
       .then(({ data }) => {
         console.info(data);
         localStorage.setItem("user", JSON.stringify(data));
