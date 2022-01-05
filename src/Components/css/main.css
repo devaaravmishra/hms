@@ -342,11 +342,11 @@ footer {
 		padding: 1rem;
 	}
 	.navbar .nav-container .nav-head {
-		font-size: 0.8rem;
+		font-size: 0.7rem;
 	}
 	.nav-links li a {
-		font-size: 0.4rem;
-		margin: 0 0.5rem;
+		font-size: 0.6rem;
+		margin: 1rem 0.4rem;
 	}
 	.welcome-container .welcome-head {
 		font-size: 1.6rem;
