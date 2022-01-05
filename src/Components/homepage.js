@@ -41,7 +41,7 @@ const Homepage = () => {
           </div>
           <div className={"service"}>
             <i className={"fas fa-phone fa-3x"}></i>
-            <h4>24x7<br/>Availability</h4>
+            <h4>24x7<br/>Helpline</h4>
           </div>
         </div>
       </div>
