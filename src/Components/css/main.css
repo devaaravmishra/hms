@@ -365,6 +365,9 @@ footer {
 	.service > h2 {
 		font-size: 1.2rem;
 	}
+  .service > h4{
+    font-size: 1rem;
+  }
 	#book-apt-head {
 		font-size: 0.6rem;
 		word-spacing: 0;
