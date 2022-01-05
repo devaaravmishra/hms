@@ -373,6 +373,9 @@ footer {
 	#book-appointment {
 		padding: 5%;
 	}
+  #book-btn{
+    padding: 0.6rem 1.6rem;
+  }
 	.footer-left {
 		font-size: 0.4rem;
 	}
