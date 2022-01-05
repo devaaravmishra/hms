@@ -1,389 +1,391 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  outline: none;
-  font-family: "Varela Round", sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	outline: none;
+	font-family: "Varela Round", sans-serif;
 }
 
 body {
-  overflow-x: hidden;
+	overflow-x: hidden;
 }
 
 .header {
-  min-height: 100vh;
-  background: #000046; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #1cb5e0,
-    #000046
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #1cb5e0,
-    #000046
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	min-height: 100vh;
+	background: #000046; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#1cb5e0,
+		#000046
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#1cb5e0,
+		#000046
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .navbar {
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 10vh;
-  width: 100%;
+	padding: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 10vh;
+	width: 100%;
 }
 
 .nav-container {
-  margin-left: 1%;
+	margin-left: 1%;
 }
 .nav-head {
-  display: inline;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #fff;
+	display: inline;
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #fff;
 }
 
 .nav-links {
-  display: flex;
-  transition: 0.3s ease all;
+	display: flex;
+	transition: 0.3s ease all;
 }
 .nav-links li {
-  list-style-type: none;
+	list-style-type: none;
 }
 .nav-links li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.05rem;
-  margin: 0 1.2rem;
-  position: relative;
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.05rem;
+	margin: 0 1.2rem;
+	position: relative;
 }
 
 .nav-links li a::after {
-  position: absolute;
-  content: "";
-  bottom: -4px;
-  left: 0;
-  height: 2px;
-  width: 0%;
-  background-color: #fff;
-  display: block;
+	position: absolute;
+	content: "";
+	bottom: -4px;
+	left: 0;
+	height: 2px;
+	width: 0%;
+	background-color: #fff;
+	display: block;
 }
 
 .nav-links li a:hover::after {
-  width: 100%;
-  transition: 0.3s ease all;
+	width: 100%;
+	transition: 0.3s ease all;
 }
 
 .welcome-container {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 2rem;
+	min-height: 80vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 0 2rem;
 }
 .welcome-container .welcome-head {
-  font-size: 2.4rem;
-  word-spacing: 3px;
-  color: #eee;
+	font-size: 2.4rem;
+	word-spacing: 3px;
+	color: #eee;
 }
 
 .about-us {
-  margin-top: 3rem;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  border: 2px solid #eee;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  font-family: inherit;
-  color: #fff;
-  border-radius: 3px;
-  cursor: pointer;
+	margin-top: 3rem;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	border: 2px solid #eee;
+	padding: 0.8rem 2rem;
+	font-size: 1rem;
+	font-family: inherit;
+	color: #fff;
+	border-radius: 3px;
+	cursor: pointer;
 }
 .about-us:hover {
-  background-color: #eee;
-  color: rgb(5, 46, 136);
-  transition: 0.3s ease all;
+	background-color: #eee;
+	color: rgb(5, 46, 136);
+	transition: 0.3s ease all;
 }
 
 .services {
-  padding: 5% 5%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+	padding: 5% 5%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 #services-head {
-  text-decoration: underline;
-  text-underline-offset: 1rem;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 2rem;
-  word-spacing: 4px;
-  position: relative;
-  padding-top: 2rem;
-  margin-bottom: 4rem;
+	text-decoration: underline;
+	text-underline-offset: 1rem;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 2rem;
+	word-spacing: 4px;
+	position: relative;
+	padding-top: 2rem;
+	margin-bottom: 4rem;
 }
 
 .container1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 2rem;
 }
 .container2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 2rem;
 }
 
 .service {
-  text-align: center;
-  margin: 2.5rem 2.5rem;
-  padding: 0 6rem;
+	text-align: center;
+	margin: 2.5rem 2.5rem;
+	padding: 0 6rem;
 }
 .service h4 {
-  margin: 1rem 0;
-  font-weight: bold;
+	margin: 1rem 0;
+	font-weight: bold;
 }
 
 .footer {
-  background:#02091a;
-  padding: 5% 0;
+	background: #02091a;
+	padding: 5% 0;
 }
 .footer-left {
-  color: grey;
-  margin-left: 10%;
-  margin-top: 10%;
-  display: inline;
+	color: grey;
+	margin-left: 10%;
+	margin-top: 10%;
+	display: inline;
 }
 .footer-left:hover {
-  color: #fff;
-  transition: all 0.5s ease;
+	color: #fff;
+	transition: all 0.5s ease;
 }
-.footer-right{
-  list-style: none;
-  display:inline;
-  float: right;
-  margin-right: 20%;
+.footer-right {
+	list-style: none;
+	display: inline;
+	float: right;
+	margin-right: 20%;
 }
-.footer-right li{
-  display:inline;
+.footer-right li {
+	display: inline;
 }
- .footer-right a{
+.footer-right a {
 	display: inline-block;
 	height: 40px;
 	width: 40px;
-	background-color: rgba(255,255,255,0.2);
-	margin:0 10px 10px 0;
+	background-color: rgba(255, 255, 255, 0.2);
+	margin: 0 10px 10px 0;
 	text-align: center;
 	line-height: 40px;
 	border-radius: 50%;
 	color: #ffffff;
 	transition: all 0.5s ease;
 }
-.footer-right a:hover{
+.footer-right a:hover {
 	color: #24262b;
 	background-color: #ffffff;
 }
 .footer-bottom {
-  background: #02091a;
-  padding: 2% 0;
-  text-align: center;
+	background: #02091a;
+	padding: 2% 0;
+	text-align: center;
 }
 
 .footer-bottom-text {
-  color: #fff;
-}
-
-@media (max-width: 725px) {
-  .navbar {
-    padding: 1rem;
-  }
-  .navbar .nav-container .nav-head {
-    font-size: 0.8rem;
-  }
-  .nav-links li a {
-    font-size: 0.4rem;
-    margin: 0 0.5rem;
-  }
-  .welcome-container .welcome-head {
-    font-size: 1.6rem;
-  }
-  .services .container1 {
-    flex-wrap: wrap;
-  }
-  .services .container2 {
-    flex-wrap: wrap;
-  }
-  #services-head {
-    font-size: 1.5rem;
-  }
-  .service {
-    margin: 1.5rem 1.5rem;
-  }
-  .service > h2 {
-    font-size: 1.2rem;
-  }
-  #book-apt-head{
-    font-size: 0.6rem;
-    word-spacing:0;
-  }
-  #book-appointment{
-    padding:5%;
-  }
-  .footer-left{
-    font-size:.4rem;
-  }
-  .footer-right a{
-    height: 22px;
-    width: 22px;
-  }
-  .footer-bottom-text{
-    font-size:.4rem;
-  }
-  .foot-icon{
-    font-size: 12px;
-    position: relative;
-    top:-10px;
-  }
+	color: #fff;
 }
 
 @keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(0);
+	}
 }
 
 header {
-  animation: 0.75s ease-out 0s 1 slideInFromLeft;
+	animation: 0.75s ease-out 0s 1 slideInFromLeft;
 }
 
-footer{
-  animation: 0.75s ease-out 0s 1 slideInFromLeft;
+footer {
+	animation: 0.75s ease-out 0s 1 slideInFromLeft;
 }
 
-#book-appointment{
-  min-height: 25vh;
-  text-align: center;
+#book-appointment {
+	min-height: 25vh;
+	text-align: center;
 }
 
-#book-btn{
-  margin-top: 3rem;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  border: 2px solid  rgb(5, 46, 136);;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  font-family: inherit;
-  color: rgb(5, 46, 136);
-  border-radius: 3px;
-  cursor: pointer; 
+#book-btn {
+	margin-top: 3rem;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	border: 2px solid rgb(5, 46, 136);
+	padding: 0.8rem 2rem;
+	font-size: 1rem;
+	font-family: inherit;
+	color: rgb(5, 46, 136);
+	border-radius: 3px;
+	cursor: pointer;
 }
 
-#book-btn:hover{
-  background-color: rgb(5, 46, 136);;
-  color:#eee;
-  transition: 0.3s ease all;
+#book-btn:hover {
+	background-color: rgb(5, 46, 136);
+	color: #eee;
+	transition: 0.3s ease all;
 }
-#book-apt-head{
- font-family: "Varela Round", sans-serif; 
- word-spacing: .5rem;
- text-transform: capitalize;
-}
-
-#apt-container{
-  text-align: center;
-  width:100%;
-  background: #000046; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #1cb5e0,
-    #000046
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #1cb5e0,
-    #000046
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  padding-bottom: 10%;
+#book-apt-head {
+	font-family: "Varela Round", sans-serif;
+	word-spacing: 0.5rem;
+	text-transform: capitalize;
 }
 
-#appointments-cards{
-  text-align:center;
-  margin:2%;
+#apt-container {
+	text-align: center;
+	width: 100%;
+	background: #000046; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#1cb5e0,
+		#000046
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#1cb5e0,
+		#000046
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	padding-bottom: 10%;
+}
+
+#appointments-cards {
+	text-align: center;
+	margin: 2%;
 }
 
 @keyframes slidein {
-  from {
-    margin-left: 100%;
-  }
-  to {
-    margin-right: 5%;
-  }
+	from {
+		margin-left: 100%;
+	}
+	to {
+		margin-right: 5%;
+	}
 }
 
-.card{
-  animation-duration: 2s;
-  animation-name: slidein;
-  display: inline-block;
-  margin:5%;
-  background:#eee;
-  border:none;
-  width:12%;
-  opacity: 0.9;
+.card {
+	animation-duration: 2s;
+	animation-name: slidein;
+	display: inline-block;
+	margin: 5%;
+	background: #eee;
+	border: none;
+	width: 12%;
+	opacity: 0.9;
 }
 
-.card:hover{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  cursor: pointer;
-  opacity: 1;
+.card:hover {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+		rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+	cursor: pointer;
+	opacity: 1;
 }
 
-.card-body{
-  background: #000046;
-  color: #eee;
+.card-body {
+	background: #000046;
+	color: #eee;
 }
 
-#welcome-head{
-  font-family: "Varela Round", sans-serif;
-  color:#eee;
+#welcome-head {
+	font-family: "Varela Round", sans-serif;
+	color: #eee;
 }
 
-#Appointment-sub-head{
-  font-family: "Varela Round", sans-serif;
-  font-weight: bold;
-  color:#eee;
+#Appointment-sub-head {
+	font-family: "Varela Round", sans-serif;
+	font-weight: bold;
+	color: #eee;
 }
 
-#apt-bookmore-btn{
-  margin-top: 3rem;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  border: 2px solid #eee;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  font-family: inherit;
-  color: #fff;
-  border-radius: 3px;
-  cursor: pointer; 
+#apt-bookmore-btn {
+	margin-top: 3rem;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	border: 2px solid #eee;
+	padding: 0.8rem 2rem;
+	font-size: 1rem;
+	font-family: inherit;
+	color: #fff;
+	border-radius: 3px;
+	cursor: pointer;
 }
 
-#apt-bookmore-btn:hover{
-  background-color: #eee;
-  color: rgb(5, 46, 136);
-  transition: 0.3s ease all;
+#apt-bookmore-btn:hover {
+	background-color: #eee;
+	color: rgb(5, 46, 136);
+	transition: 0.3s ease all;
+}
+
+@media (max-width: 725px) {
+	.navbar {
+		padding: 1rem;
+	}
+	.navbar .nav-container .nav-head {
+		font-size: 0.8rem;
+	}
+	.nav-links li a {
+		font-size: 0.4rem;
+		margin: 0 0.5rem;
+	}
+	.welcome-container .welcome-head {
+		font-size: 1.6rem;
+	}
+	.services .container1 {
+		flex-wrap: wrap;
+	}
+	.services .container2 {
+		flex-wrap: wrap;
+	}
+	#services-head {
+		font-size: 1.5rem;
+	}
+	.service {
+		margin: 1.5rem 1.5rem;
+	}
+	.service > h2 {
+		font-size: 1.2rem;
+	}
+	#book-apt-head {
+		font-size: 0.6rem;
+		word-spacing: 0;
+	}
+	#book-appointment {
+		padding: 5%;
+	}
+	.footer-left {
+		font-size: 0.4rem;
+	}
+	.footer-right a {
+		height: 22px;
+		width: 22px;
+	}
+	.footer-bottom-text {
+		font-size: 0.4rem;
+	}
+	.foot-icon {
+		font-size: 12px;
+		position: relative;
+		top: -10px;
+	}
 }
