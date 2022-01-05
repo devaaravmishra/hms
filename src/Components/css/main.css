@@ -114,7 +114,7 @@ body {
 
 .services {
   padding: 5% 5%;
-  min-height: 70vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
