@@ -253,6 +253,7 @@ footer {
 #apt-container {
 	text-align: center;
 	width: 100%;
+	min-height: 90vh;
 	background: #000046; /* fallback for old browsers */
 	background: -webkit-linear-gradient(
 		to right,
