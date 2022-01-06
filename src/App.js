@@ -46,7 +46,7 @@ const App = () => {
       <div>
         <Switch>
           <Route path={"/"} exact>
-            <Homepage/>
+            <Homepage loggedIn = {loggedIn} baseURL={BASE_URL}/>
           </Route>
           <Route path={"/login"} >
             <Login setUserState={setUser} baseURL={BASE_URL}/>
