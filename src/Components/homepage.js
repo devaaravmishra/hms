@@ -3,12 +3,27 @@ import { useHistory } from "react-router-dom";
 import "./css/main.css";
 import Header from "./header";
 import Footer from "./footer";
+import { useEffect } from "react";
 
-const Homepage = () => {
+const Homepage = ({loggedIn, baseURL}) => {
   const history = useHistory();
+
+  const reloadToTop = () => {
+		window.location.reload(false)
+	};
   
+  useEffect(() => {
+    if (loggedIn.current) {
+      setTimeout(() => {
+        history.push("/appointmentpage");
+        reloadToTop();
+      }, 100);
+    }
+  });
+
   const onAppointmentBook = () => {
-    history.push("/appointments",window.scrollTo(0,0));
+    history.push("/appointments");
+    reloadToTop();
   };
 
   return (
