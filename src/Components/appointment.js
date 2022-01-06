@@ -6,126 +6,152 @@ import "./css/form.css";
 import logo from "./imgs/Doctor_20.png";
 
 import Axios from "axios";
-const Appointment = ({baseURL, user, loggedIn}) => {
-  const [appointment, setAppointment] = useState({});
-  const history = useHistory();
+const Appointment = ({ baseURL, user, loggedIn }) => {
+	const [appointment, setAppointment] = useState({});
+	const history = useHistory();
 
-  useEffect(() => {
-    if (!loggedIn.current) {
-      window.alert("Login to make an appointment");
-      setTimeout(() => {
-        history.push("/login");
-        reloadToTop();
-      }, 100);
-    }
-  });
+	useEffect(() => {
+		if (!loggedIn.current) {
+			window.alert("Login to make an appointment");
+			setTimeout(() => {
+				history.push("/login");
+				reloadToTop();
+			}, 100);
+		}
+	});
 
-  const reloadToTop = () => {
-		window.location.reload(false)
+	const reloadToTop = () => {
+		window.location.reload(false);
 	};
 
-  const onMakeAppointment = async (e) => {
-    e.preventDefault();
-    await Axios.post(`https://hmsystem-backend.herokuapp.com/user/makeApt`, {
-      ...appointment,
-      pid: user._id,
-    })
-      .then(() => {
-        window.alert("Your appointment successfully scheduled.");
-      })
-      .catch((error) => {
-        console.error("Some error occurred while making appointment", error);
-      });
-  };
+	const onMakeAppointment = async (e) => {
+		e.preventDefault();
+		await Axios.post(
+			`https://hmsystem-backend.herokuapp.com/user/makeApt`,
+			{
+				...appointment,
+				pid: user._id,
+			}
+		)
+			.then(() => {
+				window.alert("Your appointment successfully scheduled.");
+			})
+			.catch((error) => {
+				console.error(
+					"Some error occurred while making appointment",
+					error
+				);
+			});
+	};
 
-  return (
-    <React.Fragment>
-      <div id={"super-container"}>
-        <Navbar />
-        <div className={"parent-container"}>
-          <form id={"login-container"}>
-            <img src={logo} alt={"Health Insurance"} />
-            <br />
-            <br />
-            <div className={"input-container"}>
-              <i className={"fa fa-calendar-check icon"}></i>
-              <input
-                id={"dateinput"}
-                type={"date"}
-                name={"date"}
-                placeholder={"Date *"}
-                required
-                onChange={(e) => {
-                  setAppointment({
-                    ...appointment,
-                    date: Date.parse(e.target.value),
-                  });
-                }}
-              />
-            </div>
-            <br />
-            <br />
-            <div className={"radio-container"}>
-              <h3 id={"radio-container-head"}>Choose time slot</h3>
-              <br />
-              <br />
-              <label>
-                <input
-                  className={"radio"}
-                  type="radio"
-                  name="slot"
-                  tabIndex="1"
-                  value={1}
-                  onChange={(e) => {
-                    setAppointment({ ...appointment, slot: e.target.value });
-                  }}
-                />
-                <span className={"radio-text"}>1</span>&nbsp;&nbsp;
-              </label>
-              <label>
-                <input
-                  className={"radio"}
-                  type="radio"
-                  name="slot"
-                  tabIndex="2"
-                  value={2}
-                  onChange={(e) => {
-                    setAppointment({ ...appointment, slot: e.target.value });
-                  }}
-                />
-                <span className={"radio-text"}>2</span>&nbsp;&nbsp;
-              </label>
-              <label>
-                <input
-                  className={"radio"}
-                  type="radio"
-                  name="slot"
-                  tabIndex="3"
-                  value={3}
-                  onChange={(e) => {
-                    setAppointment({ ...appointment, slot: e.target.value });
-                  }}
-                />
-                <span className={"radio-text"}>3</span>
-              </label>
-              <br />
-              <br />
-              <span className={"slots-desc"}>1. 7AM - 10AM</span>
-              <span className={"slots-desc"}>&nbsp;&nbsp;2. 12PM - 4PM</span>
-              <span className={"slots-desc"}>&nbsp;&nbsp;3. 6PM - 11 PM</span>
-            </div>
-            <button id={"submit"} type={"submit"} onClick={onMakeAppointment}>
-              Book
-            </button>
-            <br />
-            <br />
-            <br />
-          </form>
-        </div>
-      </div>
-      <Footer />
-    </React.Fragment>
-  );
+	return (
+		<React.Fragment>
+			<div id={"super-container"}>
+				<Navbar />
+				<div className={"parent-container"}>
+					<form id={"login-container"}>
+						<img src={logo} alt={"Health Insurance"} />
+						<br />
+						<br />
+						<div className={"input-container"}>
+							<i className={"fa fa-calendar-check icon"}></i>
+							<input
+								id={"dateinput"}
+								type={"date"}
+								name={"date"}
+								placeholder={"Date *"}
+								required
+								onChange={(e) => {
+									setAppointment({
+										...appointment,
+										date: Date.parse(e.target.value),
+									});
+								}}
+							/>
+						</div>
+						<br />
+						<br />
+						<div className={"radio-container"}>
+							<h3 id={"radio-container-head"}>
+								Choose time slot
+							</h3>
+							<br />
+							<br />
+							<label>
+								<input
+									className={"radio"}
+									type="radio"
+									name="slot"
+									tabIndex="1"
+									value={1}
+									onChange={(e) => {
+										setAppointment({
+											...appointment,
+											slot: e.target.value,
+										});
+									}}
+								/>
+								<span className={"radio-text"}>1</span>
+								&nbsp;&nbsp;
+							</label>
+							<label>
+								<input
+									className={"radio"}
+									type="radio"
+									name="slot"
+									tabIndex="2"
+									value={2}
+									onChange={(e) => {
+										setAppointment({
+											...appointment,
+											slot: e.target.value,
+										});
+									}}
+								/>
+								<span className={"radio-text"}>2</span>
+								&nbsp;&nbsp;
+							</label>
+							<label>
+								<input
+									className={"radio"}
+									type="radio"
+									name="slot"
+									tabIndex="3"
+									value={3}
+									onChange={(e) => {
+										setAppointment({
+											...appointment,
+											slot: e.target.value,
+										});
+									}}
+								/>
+								<span className={"radio-text"}>3</span>
+							</label>
+							<br />
+							<br />
+							<span className={"slots-desc"}>1. 7AM - 10AM</span>
+							<span className={"slots-desc"}>
+								&nbsp;&nbsp;2. 12PM - 4PM
+							</span>
+							<span className={"slots-desc"}>
+								&nbsp;&nbsp;3. 6PM - 11 PM
+							</span>
+						</div>
+						<button
+							id={"submit"}
+							type={"submit"}
+							onClick={onMakeAppointment}>
+							Book
+						</button>
+						<br />
+						<br />
+						<br />
+					</form>
+				</div>
+			</div>
+			<Footer />
+		</React.Fragment>
+	);
 };
 
 export default Appointment;
