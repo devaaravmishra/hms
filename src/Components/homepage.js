@@ -6,9 +6,9 @@ import Footer from "./footer";
 
 const Homepage = () => {
   const history = useHistory();
-
+  
   const onAppointmentBook = () => {
-    history.push("/appointments");
+    history.push("/appointments",window.scrollTo(0,0));
   };
 
   return (
