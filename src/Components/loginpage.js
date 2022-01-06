@@ -27,8 +27,13 @@ const Login = ({baseURL, setUserState}) => {
       });
   };
 
+  const reloadToTop = () => {
+		window.location.reload(false)
+	};
+  
   const toSignUp = () => {
     history.push("/signup");
+    reloadToTop();
   };
 
   return (

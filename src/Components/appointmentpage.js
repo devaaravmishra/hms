@@ -31,10 +31,14 @@ const AppointmentPage = ({baseURL, user, loggedIn}) => {
     }
     // eslint-disable-next-line
   }, [user]);
+  
+  const reloadToTop = () => {
+		window.location.reload(false)
+	};
 
   const BookMore = () => {
     history.push("/appointments");
-    window.scrollTo(0, 0);
+    reloadToTop();
   }
 
   const renderAppointments = appointments.map((appointment, index) => {
