@@ -20,7 +20,7 @@ const Homepage = ({loggedIn, baseURL}) => {
       }, 100);
     }
   });
-
+  
   const onAppointmentBook = () => {
     history.push("/appointments");
     reloadToTop();
