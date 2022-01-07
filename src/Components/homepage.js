@@ -4,6 +4,8 @@ import "./css/main.css";
 import Header from "./header";
 import Footer from "./footer";
 import { useEffect } from "react";
+import AppointmentPage from "./appointmentpage";
+
 
 const Homepage = ({ loggedIn, baseURL }) => {
 	const history = useHistory();
@@ -19,7 +21,8 @@ const Homepage = ({ loggedIn, baseURL }) => {
 	const onAppointmentBook = () => {
 		history.push("/appointments");
 	};
-	return (
+
+	return !loggedIn.current ? (
 		<React.Fragment>
 			<Header />
 			<div className={"services"} id={"services"}>
@@ -67,6 +70,8 @@ const Homepage = ({ loggedIn, baseURL }) => {
 			</div>
 			<Footer />
 		</React.Fragment>
+	) : (
+		<AppointmentPage />
 	);
 };
 
