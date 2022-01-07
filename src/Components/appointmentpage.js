@@ -54,6 +54,9 @@ const AppointmentPage = ({ baseURL, user, loggedIn }) => {
 				<button id={"apt-bookmore-btn"} onClick={BookMore}>
 					Book More
 				</button>
+				<button onClick={onLogout} id={"logout-btn"}>
+              		Logout
+            	</button>
 				<br />
 				<br />
 				<div id={"appointments-cards"}>{renderAppointments}</div>
