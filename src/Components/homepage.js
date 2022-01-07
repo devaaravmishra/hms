@@ -8,24 +8,17 @@ import { useEffect } from "react";
 const Homepage = ({ loggedIn, baseURL }) => {
 	const history = useHistory();
 
-	const reloadToTop = () => {
-		window.location.reload(false);
-	};
-
 	useEffect(() => {
 		if (loggedIn.current) {
 			setTimeout(() => {
 				history.push("/appointmentpage");
-				reloadToTop();
 			}, 100);
 		}
 	});
 
 	const onAppointmentBook = () => {
 		history.push("/appointments");
-		reloadToTop();
 	};
-
 	return (
 		<React.Fragment>
 			<Header />

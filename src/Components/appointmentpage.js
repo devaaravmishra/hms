@@ -34,13 +34,8 @@ const AppointmentPage = ({ baseURL, user, loggedIn }) => {
 		// eslint-disable-next-line
 	}, [user]);
 
-	const reloadToTop = () => {
-		window.location.reload(false);
-	};
-
 	const BookMore = () => {
 		history.push("/appointments");
-		reloadToTop();
 	};
 
 	const renderAppointments = appointments.map((appointment, index) => {

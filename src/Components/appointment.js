@@ -15,14 +15,9 @@ const Appointment = ({ baseURL, user, loggedIn }) => {
 			window.alert("Login to make an appointment");
 			setTimeout(() => {
 				history.push("/login");
-				reloadToTop();
 			}, 100);
 		}
 	});
-
-	const reloadToTop = () => {
-		window.location.reload(false);
-	};
 
 	const onMakeAppointment = async (e) => {
 		e.preventDefault();
