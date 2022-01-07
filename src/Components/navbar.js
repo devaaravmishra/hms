@@ -1,9 +1,23 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+
 const Navbar = () => {
+  const history = useHistory();
+  const refresh = () => {
+    window.location.reload(false);
+  };
   return (
     <div className={"navbar"}>
       <div className={"nav-container"}>
-        <h1 className={"nav-head"}>Hospital</h1>
+        <h1
+          onClick={() => {
+            history.push("/");
+            refresh();
+          }}
+          className={"nav-head"}
+        >
+          Hospital
+        </h1>
       </div>
       <ul className={"nav-links"}>
         <li>
