@@ -30,6 +30,11 @@ const AppointmentPage = ({ baseURL, user, loggedIn }) => {
 					});
 			};
 			fetchAppointments();
+			if(!loggedIn.current){
+				setTimeout(() => {
+					history.push("/")
+				}, 100);
+			}
 		}
 		// eslint-disable-next-line
 	}, [user]);
