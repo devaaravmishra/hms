@@ -238,10 +238,27 @@ footer {
 	border-radius: 3px;
 	cursor: pointer;
 }
-
+#logout-btn{
+	margin-top: 3rem;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	border: 2px solid #eee;
+	padding: 0.8rem 2rem;
+	font-size: 1rem;
+	font-family: inherit;
+	color: #fff;
+	border-radius: 3px;
+	cursor: pointer;
+}
 #book-btn:hover {
 	background-color: rgb(5, 46, 136);
 	color: #eee;
+	transition: 0.3s ease all;
+}
+#logout-btn:hover{
+	background-color: #eee;
+	color: rgb(5, 46, 136);
 	transition: 0.3s ease all;
 }
 #book-apt-head {
@@ -249,7 +266,6 @@ footer {
 	word-spacing: 0.5rem;
 	text-transform: capitalize;
 }
-
 #apt-container {
 	text-align: center;
 	width: 100%;
