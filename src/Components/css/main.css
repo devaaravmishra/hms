@@ -239,7 +239,7 @@ footer {
 	cursor: pointer;
 }
 #logout-btn{
-	margin-top: 3rem;
+	margin: 3rem 0 0 2rem;
 	border: none;
 	outline: none;
 	background-color: transparent;
