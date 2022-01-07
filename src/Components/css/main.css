@@ -395,6 +395,14 @@ footer {
   #book-btn{
     padding: 0.6rem 1.6rem;
   }
+  #apt-bookmore-btn{
+	padding: 0.8rem 1rem;
+	font-size: .8rem;
+  }
+  #logout-btn{
+	padding: 0.8rem 1.6rem;
+	font-size: .8rem;
+  }
 	.footer-left {
 		font-size: 0.4rem;
 	}
