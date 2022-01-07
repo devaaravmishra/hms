@@ -403,6 +403,9 @@ footer {
 	padding: 0.8rem 1.6rem;
 	font-size: .8rem;
   }
+  #Appointment-sub-head{
+	  font-size: 0.8rem;
+  }
 	.footer-left {
 		font-size: 0.4rem;
 	}
