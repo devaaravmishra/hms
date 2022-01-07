@@ -37,11 +37,16 @@ const AppointmentPage = ({ baseURL, user, loggedIn }) => {
 	const BookMore = () => {
 		history.push("/appointments");
 	};
-
+	const onLogout = () => {
+		localStorage.clear();
+		setTimeout(() => {
+			window.location.reload();
+		}, 50);
+	  };
 	const renderAppointments = appointments.map((appointment, index) => {
 		return <AppointmentCard appointment={appointment} key={index} />;
 	});
-
+	
 	return (
 		<React.Fragment>
 			<div id={"apt-container"}>
