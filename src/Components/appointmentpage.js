@@ -57,7 +57,7 @@ const AppointmentPage = ({ baseURL, user, loggedIn }) => {
 			<div id={"apt-container"}>
 				<Navbar />
 				<br />
-				<h1 id={"welcome-head"}>Welcome , {user.name}!</h1>
+				<h1 id={"welcome-head"}>Welcome,&nbsp;{user.name}!</h1>
 				<p id={"Appointment-sub-head"}>
 					Get all your pending appointments here.
 				</p>
