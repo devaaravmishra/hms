@@ -15,7 +15,8 @@ const Appointment = ({ baseURL, user, loggedIn }) => {
 			window.alert("Login to make an appointment");
 			setTimeout(() => {
 				history.push("/login");
-			}, 100);
+				window.location.href = window.location.href;
+			}, 50);
 		}
 	});
 
