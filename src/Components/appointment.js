@@ -15,6 +15,7 @@ const Appointment = ({ baseURL, user, loggedIn }) => {
 			window.alert("Login to make an appointment");
 			setTimeout(() => {
 				history.push("/login");
+				// eslint-disable-next-line 
 				window.location.href = window.location.href;
 			}, 50);
 		}
