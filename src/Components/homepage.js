@@ -5,7 +5,7 @@ import Header from "./header";
 import Footer from "./footer";
 import { useEffect } from "react";
 
-const Homepage = ({ loggedIn, baseURL }) => {
+const Homepage = ({ user, loggedIn, baseURL }) => {
 	const history = useHistory();
 
 	useEffect(() => {
@@ -20,7 +20,7 @@ const Homepage = ({ loggedIn, baseURL }) => {
 
 	return (
 		<React.Fragment>
-			<Header loggedIn = {loggedIn} />
+			<Header/>
 			<div className={"services"} id={"services"}>
 				<h1 id={"services-head"}>Best in Town</h1>
 				<div className={"container1"}>
