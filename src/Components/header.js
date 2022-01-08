@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from "./navbar";
 
-const Header = () => {
+const Header = ({loggedIn}) => {
   return (
     <header className={"header"}>
-      <Navbar />
+      <Navbar loggedIn = {loggedIn} />
       <div className={"welcome-container"}>
         <h1 className={"welcome-head"}>Stay Safe and Secure</h1>
         <a href="#footer">

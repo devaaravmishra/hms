@@ -20,7 +20,7 @@ const Homepage = ({ loggedIn, baseURL }) => {
 
 	return (
 		<React.Fragment>
-			<Header />
+			<Header loggedIn = {loggedIn} />
 			<div className={"services"} id={"services"}>
 				<h1 id={"services-head"}>Best in Town</h1>
 				<div className={"container1"}>
