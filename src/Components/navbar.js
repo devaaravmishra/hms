@@ -1,12 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
 import { useHistory } from "react-router-dom";
+import { Login_Details } from "../App";
 
 const Navbar = () => {
+	const loggedIn = useContext(Login_Details);
 	const history = useHistory();
 	const refresh = () => {
 		window.location.reload(false);
 	};
-	return (
+	return loggedIn ? (
 		<div className={"navbar"}>
 			<div className={"nav-container"}>
 				<h1
@@ -27,6 +29,35 @@ const Navbar = () => {
 				</li>
 				<li>
 					<a href={"/signup"}>Sign Up</a>
+				</li>
+				<li>
+					<a
+						rel="noreferrer"
+						href={"https://github.com/Aarav619/hms-frontend"}
+						target={"_blank"}>
+						About-Us
+					</a>
+				</li>
+			</ul>
+		</div>
+	) : (
+		<div className={"navbar"}>
+			<div className={"nav-container"}>
+				<h1
+					onClick={() => {
+						history.push("/");
+						refresh();
+					}}
+					className={"nav-head"}>
+					Hospital
+				</h1>
+			</div>
+			<ul className={"nav-links"}>
+				<li>
+					<a href={"/appointmentpage"}>App</a>
+				</li>
+				<li>
+					<a href={"/appointments"}>Book Appoinment</a>
 				</li>
 				<li>
 					<a
