@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Axios from "axios";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import AppointmentCard from "./apt-cards";
 import { useHistory } from "react-router";
 import "./css/main.css";
+import LoginDetails from "../Context/LoginContext";
 
-const AppointmentPage = ({ baseURL, user, loggedIn }) => {
+const AppointmentPage = () => {
+	const { user, loggedIn, baseURL } = useContext(LoginDetails);
 	const [appointments, setAppointments] = useState([]);
 	const history = useHistory();
 
 	useEffect(() => {
-		if (loggedIn.current) {
+		if (loggedIn) {
 			const fetchAppointments = async () => {
-				await Axios.get(
-					`https://hmsystem-backend.herokuapp.com/user/getApt/${user._id}`
-				)
+				await Axios.get(`${baseURL}/user/getApt/${user._id}`)
 					.then(({ data: foundAppointments }) => {
 						console.info(
 							`Appointments were found for user with name:${user.name}`
@@ -30,9 +30,10 @@ const AppointmentPage = ({ baseURL, user, loggedIn }) => {
 					});
 			};
 			fetchAppointments();
-			if(!loggedIn.current){
+			if (!loggedIn) {
 				setTimeout(() => {
-					history.push("/")
+					history.push("/");
+					window.location.reload();
 				}, 100);
 			}
 		}
@@ -42,16 +43,16 @@ const AppointmentPage = ({ baseURL, user, loggedIn }) => {
 	const BookMore = () => {
 		history.push("/appointments");
 	};
+
 	const onLogout = () => {
 		localStorage.clear();
-		setTimeout(() => {
-			window.location.reload();
-		}, 50);
-	  };
+		history.push("/");
+		window.location.reload();
+	};
 	const renderAppointments = appointments.map((appointment, index) => {
 		return <AppointmentCard appointment={appointment} key={index} />;
 	});
-	
+
 	return (
 		<React.Fragment>
 			<div id={"apt-container"}>
@@ -65,8 +66,8 @@ const AppointmentPage = ({ baseURL, user, loggedIn }) => {
 					Book More
 				</button>
 				<button onClick={onLogout} id={"logout-btn"}>
-              		Logout
-            	</button>
+					Logout
+				</button>
 				<br />
 				<br />
 				<div id={"appointments-cards"}>{renderAppointments}</div>

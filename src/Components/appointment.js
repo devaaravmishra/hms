@@ -1,21 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import { useHistory } from "react-router-dom";
 import "./css/form.css";
 import logo from "./imgs/Doctor_20.png";
+import LoginDetails from "../Context/LoginContext";
 
 import Axios from "axios";
-const Appointment = ({ baseURL, user, loggedIn }) => {
+const Appointment = () => {
+	const { user, loggedIn, baseURL } = useContext(LoginDetails);
 	const [appointment, setAppointment] = useState({});
 	const history = useHistory();
 
 	useEffect(() => {
-		if (!loggedIn.current) {
+		if (!loggedIn) {
 			window.alert("Login to make an appointment");
 			setTimeout(() => {
 				history.push("/login");
-				// eslint-disable-next-line 
+				// eslint-disable-next-line
 				window.location.href = window.location.href;
 			}, 50);
 		}
@@ -23,13 +25,10 @@ const Appointment = ({ baseURL, user, loggedIn }) => {
 
 	const onMakeAppointment = async (e) => {
 		e.preventDefault();
-		await Axios.post(
-			`https://hmsystem-backend.herokuapp.com/user/makeApt`,
-			{
-				...appointment,
-				pid: user._id,
-			}
-		)
+		await Axios.post(`${baseURL}/user/makeApt`, {
+			...appointment,
+			pid: user._id,
+		})
 			.then(() => {
 				window.alert("Your appointment successfully scheduled.");
 			})
@@ -137,7 +136,8 @@ const Appointment = ({ baseURL, user, loggedIn }) => {
 						<button
 							id={"submit"}
 							type={"submit"}
-							onClick={onMakeAppointment}>
+							onClick={onMakeAppointment}
+						>
 							Book
 						</button>
 						<br />

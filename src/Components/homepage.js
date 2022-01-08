@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "./css/main.css";
 import Header from "./header";
 import Footer from "./footer";
 import { useEffect } from "react";
+import LoginDetails from "../Context/LoginContext";
 
-const Homepage = ({ user, loggedIn, baseURL }) => {
+const Homepage = () => {
+	const { loggedIn } = useContext(LoginDetails);
 	const history = useHistory();
 
 	useEffect(() => {
-		if (loggedIn.current) {
+		if (loggedIn) {
 			history.push("/appointmentpage");
 		}
 	});
@@ -20,7 +22,7 @@ const Homepage = ({ user, loggedIn, baseURL }) => {
 
 	return (
 		<React.Fragment>
-			<Header/>
+			<Header />
 			<div className={"services"} id={"services"}>
 				<h1 id={"services-head"}>Best in Town</h1>
 				<div className={"container1"}>
