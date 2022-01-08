@@ -15,7 +15,7 @@ const Homepage = ({ loggedIn, baseURL }) => {
 	});
 
 	const onAppointmentBook = () => {
-		history.push("/appointments");
+		history.push("/login");
 	};
 
 	return (
@@ -61,7 +61,7 @@ const Homepage = ({ loggedIn, baseURL }) => {
 					Its hassle free, book an appointment with our system online!
 				</h4>
 				<button id={"book-btn"} onClick={onAppointmentBook}>
-					Book
+					Login to Book
 				</button>
 			</div>
 			<Footer />
