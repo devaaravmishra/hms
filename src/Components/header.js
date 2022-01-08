@@ -4,7 +4,7 @@ import Navbar from "./navbar";
 const Header = () => {
   return (
     <header className={"header"}>
-      <Navbar />
+      <Navbar/>
       <div className={"welcome-container"}>
         <h1 className={"welcome-head"}>Stay Safe and Secure</h1>
         <a href="#footer">

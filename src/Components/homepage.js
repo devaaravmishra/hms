@@ -1,21 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "./css/main.css";
 import Header from "./header";
 import Footer from "./footer";
 import { useEffect } from "react";
+import LoginDetails from "../Context/LoginContext";
 
-const Homepage = ({ loggedIn, baseURL }) => {
+const Homepage = () => {
+	const { loggedIn } = useContext(LoginDetails);
 	const history = useHistory();
 
 	useEffect(() => {
-		if (loggedIn.current) {
+		if (loggedIn) {
 			history.push("/appointmentpage");
 		}
 	});
 
 	const onAppointmentBook = () => {
-		history.push("/appointments");
+		history.push("/login");
 	};
 
 	return (
@@ -61,7 +63,7 @@ const Homepage = ({ loggedIn, baseURL }) => {
 					Its hassle free, book an appointment with our system online!
 				</h4>
 				<button id={"book-btn"} onClick={onAppointmentBook}>
-					Book
+					Login to Book
 				</button>
 			</div>
 			<Footer />
