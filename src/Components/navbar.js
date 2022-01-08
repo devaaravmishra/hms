@@ -1,14 +1,14 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { Login_Details } from "../App";
+import LoginDetails from "../Context/LoginContext";
 
 const Navbar = () => {
-	const loggedIn = useContext(Login_Details);
+	const { loggedIn } = useContext(LoginDetails);
 	const history = useHistory();
 	const refresh = () => {
 		window.location.reload(false);
 	};
-	return loggedIn ? (
+	return !loggedIn ? (
 		<div className={"navbar"}>
 			<div className={"nav-container"}>
 				<h1
@@ -16,7 +16,8 @@ const Navbar = () => {
 						history.push("/");
 						refresh();
 					}}
-					className={"nav-head"}>
+					className={"nav-head"}
+				>
 					Hospital
 				</h1>
 			</div>
@@ -34,7 +35,8 @@ const Navbar = () => {
 					<a
 						rel="noreferrer"
 						href={"https://github.com/Aarav619/hms-frontend"}
-						target={"_blank"}>
+						target={"_blank"}
+					>
 						About-Us
 					</a>
 				</li>
@@ -48,7 +50,8 @@ const Navbar = () => {
 						history.push("/");
 						refresh();
 					}}
-					className={"nav-head"}>
+					className={"nav-head"}
+				>
 					Hospital
 				</h1>
 			</div>
@@ -63,7 +66,8 @@ const Navbar = () => {
 					<a
 						rel="noreferrer"
 						href={"https://github.com/Aarav619/hms-frontend"}
-						target={"_blank"}>
+						target={"_blank"}
+					>
 						About-Us
 					</a>
 				</li>

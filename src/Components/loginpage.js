@@ -1,26 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import { useHistory } from "react-router-dom";
 import Axios from "axios";
 import logo from "./imgs/logo.png";
 import "./css/form.css";
+import LoginDetails from "../Context/LoginContext";
 
-const Login = ({ baseURL, setUserState }) => {
+const Login = () => {
+	const { setUser, baseURL } = useContext(LoginDetails);
 	const history = useHistory();
 	const [credentials, setCredentials] = useState({});
 
 	const onFormSubmit = async (event) => {
 		event.preventDefault();
-		await Axios.post(
-			`https://hmsystem-backend.herokuapp.com/user/login`,
-			credentials
-		)
+		await Axios.post(`${baseURL}/user/login`, credentials)
 			.then(({ data }) => {
 				console.info(data);
 				localStorage.setItem("user", JSON.stringify(data));
-				setUserState(data.user);
-				history.push("/");
+				setUser(data.user);
+				history.push("/appointmentpage");
+				window.location.reload();
 			})
 			.catch((error) => {
 				console.error(error);
@@ -81,7 +81,8 @@ const Login = ({ baseURL, setUserState }) => {
 						<button
 							id={"submit"}
 							type={"submit"}
-							onClick={onFormSubmit}>
+							onClick={onFormSubmit}
+						>
 							Login
 						</button>
 						<br />
@@ -93,7 +94,8 @@ const Login = ({ baseURL, setUserState }) => {
 						<button
 							id={"lastbtn"}
 							type={"button"}
-							onClick={toSignUp}>
+							onClick={toSignUp}
+						>
 							Sign Up
 						</button>
 					</form>
