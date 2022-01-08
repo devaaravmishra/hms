@@ -30,35 +30,43 @@ const AppointmentPage = ({ baseURL, user, loggedIn }) => {
 					});
 			};
 			fetchAppointments();
+			if(!loggedIn.current){
+				setTimeout(() => {
+					history.push("/")
+				}, 100);
+			}
 		}
 		// eslint-disable-next-line
 	}, [user]);
 
-	const reloadToTop = () => {
-		window.location.reload(false);
-	};
-
 	const BookMore = () => {
 		history.push("/appointments");
-		reloadToTop();
 	};
-
+	const onLogout = () => {
+		localStorage.clear();
+		setTimeout(() => {
+			window.location.reload();
+		}, 50);
+	  };
 	const renderAppointments = appointments.map((appointment, index) => {
 		return <AppointmentCard appointment={appointment} key={index} />;
 	});
-
+	
 	return (
 		<React.Fragment>
 			<div id={"apt-container"}>
 				<Navbar />
 				<br />
-				<h1 id={"welcome-head"}>Welcome , {user.name}!</h1>
+				<h1 id={"welcome-head"}>Welcome,&nbsp;{user.name}!</h1>
 				<p id={"Appointment-sub-head"}>
 					Get all your pending appointments here.
 				</p>
 				<button id={"apt-bookmore-btn"} onClick={BookMore}>
 					Book More
 				</button>
+				<button onClick={onLogout} id={"logout-btn"}>
+              		Logout
+            	</button>
 				<br />
 				<br />
 				<div id={"appointments-cards"}>{renderAppointments}</div>

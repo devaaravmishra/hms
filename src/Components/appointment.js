@@ -15,14 +15,11 @@ const Appointment = ({ baseURL, user, loggedIn }) => {
 			window.alert("Login to make an appointment");
 			setTimeout(() => {
 				history.push("/login");
-				reloadToTop();
-			}, 100);
+				// eslint-disable-next-line 
+				window.location.href = window.location.href;
+			}, 50);
 		}
 	});
-
-	const reloadToTop = () => {
-		window.location.reload(false);
-	};
 
 	const onMakeAppointment = async (e) => {
 		e.preventDefault();
