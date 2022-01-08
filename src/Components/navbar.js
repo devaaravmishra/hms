@@ -30,7 +30,7 @@ const Navbar = () => {
         <a href={"/signup"}>Sign Up</a>
         </li>
         <li>
-        <a href={"https://github.com/Aarav619/hms-frontend"} target={"_blank"}>About-Us</a>
+        <a rel="noreferrer" href={"https://github.com/Aarav619/hms-frontend"} target={"_blank"}>About-Us</a>
         </li>
       </ul>
     </div>
