@@ -24,13 +24,13 @@ const Navbar = () => {
           <a href={"/"}>Home</a>
         </li>
         <li>
-          <a href={"/#services"}>Services</a>
+        <a href={"/login"}>Login</a>
         </li>
         <li>
-          <a href={"/login"}>Login</a>
+        <a href={"/signup"}>Sign Up</a>
         </li>
         <li>
-          <a href={"/signup"}>Sign Up</a>
+        <a href={"https://github.com/Aarav619/hms-frontend"} target={"_blank"}>About-Us</a>
         </li>
       </ul>
     </div>
