@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
-import { useHistory } from "react-router-dom";
 import "./css/form.css";
 import logo from "./imgs/Doctor_20.png";
 import LoginDetails from "../Context/LoginContext";
@@ -10,15 +9,12 @@ import Axios from "axios";
 const Appointment = () => {
 	const { user, loggedIn, baseURL } = useContext(LoginDetails);
 	const [appointment, setAppointment] = useState({});
-	const history = useHistory();
 
 	useEffect(() => {
 		if (!loggedIn) {
 			window.alert("Login to make an appointment");
 			setTimeout(() => {
-				history.push("/login");
-				// eslint-disable-next-line
-				window.location.href = window.location.href;
+				window.location.href = "/login"
 			}, 50);
 		}
 	});
