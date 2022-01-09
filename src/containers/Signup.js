@@ -5,8 +5,8 @@ import Footer from "../components/footer";
 import LoginDetails from "../context/LoginContext";
 import Navbar from "../components/navbar";
 
-import logo from "../components/imgs/logo.png";
-import "../components/css/form.css";
+import logo from "../assets/imgs/logo.png";
+import "../assets/css/form.css";
 
 
 const Signup = () => {

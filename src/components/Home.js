@@ -4,7 +4,7 @@ import Footer from "./footer";
 import Header from "./header";
 import LoginDetails from "../context/LoginContext";
 
-import "./css/main.css";
+import "../assets/css/main.css";
 
 const HomePage = () => {
 	const { loggedIn } = useContext(LoginDetails);

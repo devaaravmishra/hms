@@ -6,8 +6,7 @@ import Footer from "../components/footer";
 import LoginDetails from "../context/LoginContext";
 import Navbar from "../components/navbar";
 
-import "../components/css/main.css";
-
+import "../assets/css/main.css";
 
 const LandingPage = () => {
 	const { user, loggedIn, baseURL } = useContext(LoginDetails);

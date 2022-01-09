@@ -5,8 +5,8 @@ import Footer from "../components/footer";
 import LoginDetails from "../context/LoginContext";
 import Navbar from "../components/navbar";
 
-import logo from "../components/imgs/Doctor_20.png";
-import "../components/css/form.css";
+import logo from "../assets/imgs/Doctor_20.png";
+import "../assets/css/form.css";
 
 const BookAppointments = () => {
 	const { user, loggedIn, baseURL } = useContext(LoginDetails);
