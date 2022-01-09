@@ -1,16 +1,16 @@
-import React, { useEffect, useState, useContext } from "react";
 import Axios from "axios";
-import Navbar from "./navbar";
-import Footer from "./footer";
-import AppointmentCard from "./apt-cards";
-import { useHistory } from "react-router";
-import "./css/main.css";
-import LoginDetails from "../Context/LoginContext";
+import React, { useEffect, useState, useContext } from "react";
 
-const AppointmentPage = () => {
+import AppointmentCard from "../components/appointmentCards";
+import Footer from "../components/footer";
+import LoginDetails from "../context/LoginContext";
+import Navbar from "../components/navbar";
+
+import "../assets/css/main.css";
+
+const LandingPage = () => {
 	const { user, loggedIn, baseURL } = useContext(LoginDetails);
 	const [appointments, setAppointments] = useState([]);
-	const history = useHistory();
 
 	useEffect(() => {
 		if (loggedIn) {
@@ -32,22 +32,20 @@ const AppointmentPage = () => {
 			fetchAppointments();
 			if (!loggedIn) {
 				setTimeout(() => {
-					history.push("/");
-					window.location.reload();
-				}, 100);
+					window.location.href = "/"
+				}, 10);
 			}
 		}
 		// eslint-disable-next-line
 	}, [user]);
 
 	const BookMore = () => {
-		history.push("/appointments");
+		window.location.href = "/appointments"
 	};
 
 	const onLogout = () => {
 		localStorage.clear();
-		history.push("/");
-		window.location.reload();
+		window.location.href = "/"
 	};
 	const renderAppointments = appointments.map((appointment, index) => {
 		return <AppointmentCard appointment={appointment} key={index} />;
@@ -76,4 +74,4 @@ const AppointmentPage = () => {
 		</React.Fragment>
 	);
 };
-export default AppointmentPage;
+export default LandingPage;

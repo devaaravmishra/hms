@@ -1,23 +1,22 @@
-import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
-import "./css/main.css";
-import Header from "./header";
-import Footer from "./footer";
-import { useEffect } from "react";
-import LoginDetails from "../Context/LoginContext";
+import React, { useContext, useEffect } from "react";
 
-const Homepage = () => {
+import Footer from "./footer";
+import Header from "./header";
+import LoginDetails from "../context/LoginContext";
+
+import "../assets/css/main.css";
+
+const HomePage = () => {
 	const { loggedIn } = useContext(LoginDetails);
-	const history = useHistory();
 
 	useEffect(() => {
 		if (loggedIn) {
-			history.push("/appointmentpage");
+			window.location.href = "/appointmentpage"
 		}
 	});
 
 	const onAppointmentBook = () => {
-		history.push("/login");
+		window.location.href = "/login"
 	};
 
 	return (
@@ -71,4 +70,4 @@ const Homepage = () => {
 	);
 };
 
-export default Homepage;
+export default HomePage;

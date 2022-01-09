@@ -1,5 +1,6 @@
 import React from "react";
-import logo from "./imgs/vaccine.png";
+
+import logo from "../assets/imgs/vaccine.png";
 
 const AppointmentCards = (props) => {
   const { appointment } = props;

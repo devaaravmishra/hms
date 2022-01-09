@@ -1,15 +1,15 @@
 import React, { useState, useContext } from "react";
-import Navbar from "./navbar";
-import Footer from "./footer";
-import { useHistory } from "react-router-dom";
+import Navbar from "../components/navbar";
 import Axios from "axios";
-import logo from "./imgs/logo.png";
-import "./css/form.css";
-import LoginDetails from "../Context/LoginContext";
+
+import Footer from "../components/footer";
+import LoginDetails from "../context/LoginContext";
+
+import logo from "../assets/imgs/logo.png";
+import "../assets/css/form.css";
 
 const Login = () => {
 	const { setUser, baseURL } = useContext(LoginDetails);
-	const history = useHistory();
 	const [credentials, setCredentials] = useState({});
 
 	const onFormSubmit = async (event) => {
@@ -19,11 +19,11 @@ const Login = () => {
 				console.info(data);
 				localStorage.setItem("user", JSON.stringify(data));
 				setUser(data.user);
-				history.push("/appointmentpage");
-				window.location.reload();
+				window.location.href = "/appointmentpage"
 			})
 			.catch((error) => {
-				console.error(error);
+				var incCredentials = document.getElementById("Incorrect-credentials");
+        		incCredentials.style.display="block";
 			})
 			.finally(() => {
 				console.info("Login API call finished.");
@@ -31,7 +31,7 @@ const Login = () => {
 	};
 
 	const toSignUp = () => {
-		history.push("/signup");
+		window.location.href = "/signup"
 	};
 
 	return (
@@ -41,8 +41,6 @@ const Login = () => {
 				<div className={"parent-container"}>
 					<form id={"login-container"}>
 						<img src={logo} alt={"Health Insurance"} />
-						<br />
-						<br />
 						<div className={"input-container"}>
 							<i className={"fa fa-envelope icon"}></i>
 							<input
@@ -59,9 +57,6 @@ const Login = () => {
 								}}
 							/>
 						</div>
-						<br />
-						<br />
-						<br />
 						<div className="input-container">
 							<i className="fa fa-lock icon"></i>
 							<input
@@ -78,6 +73,7 @@ const Login = () => {
 								}}
 							/>
 						</div>
+						<div id={"Incorrect-credentials"}>Incorrect Email or Password!</div>
 						<button
 							id={"submit"}
 							type={"submit"}
@@ -85,12 +81,9 @@ const Login = () => {
 						>
 							Login
 						</button>
-						<br />
-						<br />
 						<span className={"spantext"}>
 							Doesn't have one, Create here.
 						</span>
-						<br />
 						<button
 							id={"lastbtn"}
 							type={"button"}

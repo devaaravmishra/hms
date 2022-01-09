@@ -1,14 +1,15 @@
-import React, { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
-import Navbar from "./navbar";
-import Footer from "./footer";
 import Axios from "axios";
-import logo from "./imgs/logo.png";
-import "./css/form.css";
-import LoginDetails from "../Context/LoginContext";
+import React, { useState, useContext } from "react";
+
+import Footer from "../components/footer";
+import LoginDetails from "../context/LoginContext";
+import Navbar from "../components/navbar";
+
+import logo from "../assets/imgs/logo.png";
+import "../assets/css/form.css";
+
 
 const Signup = () => {
-	const history = useHistory();
 	const [user, setUser] = useState({});
 	const { baseURL } = useContext(LoginDetails);
 	const onFormSubmit = async (event) => {
@@ -17,7 +18,7 @@ const Signup = () => {
 			.then(({ data }) => {
 				console.info(data);
 				localStorage.setItem("user", JSON.stringify(data));
-				history.push("/");
+				window.location.href = "/"
 			})
 			.catch((error) => {
 				console.error(error);

@@ -1,20 +1,15 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
-import LoginDetails from "../Context/LoginContext";
+
+import LoginDetails from "../context/LoginContext";
 
 const Navbar = () => {
-	const { loggedIn } = useContext(LoginDetails);
-	const history = useHistory();
-	const refresh = () => {
-		window.location.reload(false);
-	};
+	const { loggedIn, user } = useContext(LoginDetails);
 	return !loggedIn ? (
 		<div className={"navbar"}>
 			<div className={"nav-container"}>
 				<h1
 					onClick={() => {
-						history.push("/");
-						refresh();
+						window.location.href = "/"
 					}}
 					className={"nav-head"}
 				>
@@ -47,8 +42,7 @@ const Navbar = () => {
 			<div className={"nav-container"}>
 				<h1
 					onClick={() => {
-						history.push("/");
-						refresh();
+						window.location.href = "/"
 					}}
 					className={"nav-head"}
 				>
@@ -57,7 +51,7 @@ const Navbar = () => {
 			</div>
 			<ul className={"nav-links"}>
 				<li>
-					<a href={"/appointmentpage"}>App</a>
+					<a href={"/appointmentpage"}>{user.name}</a>
 				</li>
 				<li>
 					<a href={"/appointments"}>Book Appoinment</a>

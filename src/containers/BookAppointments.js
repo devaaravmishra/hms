@@ -1,24 +1,22 @@
-import React, { useEffect, useState, useContext } from "react";
-import Navbar from "./navbar";
-import Footer from "./footer";
-import { useHistory } from "react-router-dom";
-import "./css/form.css";
-import logo from "./imgs/Doctor_20.png";
-import LoginDetails from "../Context/LoginContext";
-
 import Axios from "axios";
-const Appointment = () => {
+import React, { useEffect, useState, useContext } from "react";
+
+import Footer from "../components/footer";
+import LoginDetails from "../context/LoginContext";
+import Navbar from "../components/navbar";
+
+import logo from "../assets/imgs/Doctor_20.png";
+import "../assets/css/form.css";
+
+const BookAppointments = () => {
 	const { user, loggedIn, baseURL } = useContext(LoginDetails);
 	const [appointment, setAppointment] = useState({});
-	const history = useHistory();
 
 	useEffect(() => {
 		if (!loggedIn) {
 			window.alert("Login to make an appointment");
 			setTimeout(() => {
-				history.push("/login");
-				// eslint-disable-next-line
-				window.location.href = window.location.href;
+				window.location.href = "/login"
 			}, 50);
 		}
 	});
@@ -151,4 +149,4 @@ const Appointment = () => {
 	);
 };
 
-export default Appointment;
+export default BookAppointments;
