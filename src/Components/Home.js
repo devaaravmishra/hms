@@ -5,7 +5,7 @@ import Footer from "./footer";
 import { useEffect } from "react";
 import LoginDetails from "../Context/LoginContext";
 
-const Homepage = () => {
+const HomePage = () => {
 	const { loggedIn } = useContext(LoginDetails);
 
 	useEffect(() => {
@@ -69,4 +69,4 @@ const Homepage = () => {
 	);
 };
 
-export default Homepage;
+export default HomePage;

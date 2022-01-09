@@ -6,13 +6,13 @@ import {
 	Switch,
 } from "react-router-dom";
 
-import Login from "./Components/loginpage";
-import Signup from "./Components/signuppage";
-import Homepage from "./Components/homepage";
-import Appointment from "./Components/appointment";
-import AppointmentPage from "./Components/appointmentpage";
+import Login from "./Components/Login";
+import Signup from "./Components/Signup";
+import HomePage from "./Components/Home";
 import LoginDetails from "./Context/LoginContext";
 import { BASE_URL } from "./config/base";
+import LandingPage from "./Components/LandingPage";
+import BookAppointments from "./Components/BookAppointments";
 
 const App = () => {
 	const [user, setUser] = useState({});
@@ -35,7 +35,7 @@ const App = () => {
 				<div>
 					<Switch>
 						<Route path={"/"} exact>
-							<Homepage />
+							<HomePage />
 						</Route>
 						<Route path={"/login"}>
 							<Login />
@@ -44,10 +44,10 @@ const App = () => {
 							<Signup />
 						</Route>
 						<Route path={"/appointments"}>
-							<Appointment />
+							<BookAppointments />
 						</Route>
 						<Route path={"/appointmentpage"}>
-							<AppointmentPage />
+							<LandingPage />
 						</Route>
 						<Route path={"/about-us"}>
 							<Redirect to={"/#about-us"} />

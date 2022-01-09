@@ -2,11 +2,11 @@ import React, { useEffect, useState, useContext } from "react";
 import Axios from "axios";
 import Navbar from "./navbar";
 import Footer from "./footer";
-import AppointmentCard from "./apt-cards";
+import AppointmentCard from "./appointmentCards";
 import "./css/main.css";
 import LoginDetails from "../Context/LoginContext";
 
-const AppointmentPage = () => {
+const LandingPage = () => {
 	const { user, loggedIn, baseURL } = useContext(LoginDetails);
 	const [appointments, setAppointments] = useState([]);
 
@@ -72,4 +72,4 @@ const AppointmentPage = () => {
 		</React.Fragment>
 	);
 };
-export default AppointmentPage;
+export default LandingPage;

@@ -6,7 +6,7 @@ import logo from "./imgs/Doctor_20.png";
 import LoginDetails from "../Context/LoginContext";
 
 import Axios from "axios";
-const Appointment = () => {
+const BookAppointments = () => {
 	const { user, loggedIn, baseURL } = useContext(LoginDetails);
 	const [appointment, setAppointment] = useState({});
 
@@ -147,4 +147,4 @@ const Appointment = () => {
 	);
 };
 
-export default Appointment;
+export default BookAppointments;
