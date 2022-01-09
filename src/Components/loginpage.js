@@ -23,7 +23,8 @@ const Login = () => {
 				window.location.reload();
 			})
 			.catch((error) => {
-				console.error(error);
+				var incCredentials = document.getElementById("Incorrect-credentials");
+        		incCredentials.style.display="block";
 			})
 			.finally(() => {
 				console.info("Login API call finished.");
@@ -41,8 +42,6 @@ const Login = () => {
 				<div className={"parent-container"}>
 					<form id={"login-container"}>
 						<img src={logo} alt={"Health Insurance"} />
-						<br />
-						<br />
 						<div className={"input-container"}>
 							<i className={"fa fa-envelope icon"}></i>
 							<input
@@ -59,9 +58,6 @@ const Login = () => {
 								}}
 							/>
 						</div>
-						<br />
-						<br />
-						<br />
 						<div className="input-container">
 							<i className="fa fa-lock icon"></i>
 							<input
@@ -78,6 +74,7 @@ const Login = () => {
 								}}
 							/>
 						</div>
+						<div id={"Incorrect-credentials"}>Incorrect Email or Password!</div>
 						<button
 							id={"submit"}
 							type={"submit"}
@@ -85,12 +82,9 @@ const Login = () => {
 						>
 							Login
 						</button>
-						<br />
-						<br />
 						<span className={"spantext"}>
 							Doesn't have one, Create here.
 						</span>
-						<br />
 						<button
 							id={"lastbtn"}
 							type={"button"}
