@@ -2,7 +2,7 @@ import Axios from "axios";
 import React, { useEffect, useState, useContext } from "react";
 
 import Footer from "./footer";
-import LoginDetails from "../Context/LoginContext";
+import LoginDetails from "../context/LoginContext";
 import Navbar from "./navbar";
 
 import logo from "./imgs/Doctor_20.png";

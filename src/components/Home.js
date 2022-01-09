@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 
 import Footer from "./footer";
 import Header from "./header";
-import LoginDetails from "../Context/LoginContext";
+import LoginDetails from "../context/LoginContext";
 
 import "./css/main.css";
 

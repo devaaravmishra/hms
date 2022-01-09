@@ -3,7 +3,7 @@ import Navbar from "./navbar";
 import Axios from "axios";
 
 import Footer from "./footer";
-import LoginDetails from "../Context/LoginContext";
+import LoginDetails from "../context/LoginContext";
 
 import logo from "./imgs/logo.png";
 import "./css/form.css";

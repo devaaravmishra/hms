@@ -3,7 +3,7 @@ import React, { useEffect, useState, useContext } from "react";
 
 import AppointmentCard from "./appointmentCards";
 import Footer from "./footer";
-import LoginDetails from "../Context/LoginContext";
+import LoginDetails from "../context/LoginContext";
 import Navbar from "./navbar";
 
 import "./css/main.css";
