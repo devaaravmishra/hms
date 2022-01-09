@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
 import "./css/main.css";
 import Header from "./header";
 import Footer from "./footer";
@@ -8,16 +7,15 @@ import LoginDetails from "../Context/LoginContext";
 
 const Homepage = () => {
 	const { loggedIn } = useContext(LoginDetails);
-	const history = useHistory();
 
 	useEffect(() => {
 		if (loggedIn) {
-			history.push("/appointmentpage");
+			window.location.href = "/appointmentpage"
 		}
 	});
 
 	const onAppointmentBook = () => {
-		history.push("/login");
+		window.location.href = "/login"
 	};
 
 	return (

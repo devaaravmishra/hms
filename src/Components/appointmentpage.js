@@ -3,14 +3,12 @@ import Axios from "axios";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import AppointmentCard from "./apt-cards";
-import { useHistory } from "react-router";
 import "./css/main.css";
 import LoginDetails from "../Context/LoginContext";
 
 const AppointmentPage = () => {
 	const { user, loggedIn, baseURL } = useContext(LoginDetails);
 	const [appointments, setAppointments] = useState([]);
-	const history = useHistory();
 
 	useEffect(() => {
 		if (loggedIn) {
@@ -32,7 +30,7 @@ const AppointmentPage = () => {
 			fetchAppointments();
 			if (!loggedIn) {
 				setTimeout(() => {
-					history.go("/");
+					window.location.href = "/"
 				}, 10);
 			}
 		}
@@ -40,13 +38,12 @@ const AppointmentPage = () => {
 	}, [user]);
 
 	const BookMore = () => {
-		history.push("/appointments");
+		window.location.href = "/appointments"
 	};
 
 	const onLogout = () => {
 		localStorage.clear();
-		history.push("/");
-		window.location.reload();
+		window.location.href = "/"
 	};
 	const renderAppointments = appointments.map((appointment, index) => {
 		return <AppointmentCard appointment={appointment} key={index} />;

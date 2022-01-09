@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
-import { useHistory } from "react-router-dom";
 import Axios from "axios";
 import logo from "./imgs/logo.png";
 import "./css/form.css";
@@ -9,7 +8,6 @@ import LoginDetails from "../Context/LoginContext";
 
 const Login = () => {
 	const { setUser, baseURL } = useContext(LoginDetails);
-	const history = useHistory();
 	const [credentials, setCredentials] = useState({});
 
 	const onFormSubmit = async (event) => {
@@ -19,8 +17,7 @@ const Login = () => {
 				console.info(data);
 				localStorage.setItem("user", JSON.stringify(data));
 				setUser(data.user);
-				history.push("/appointmentpage");
-				window.location.reload();
+				window.location.href = "/appointmentpage"
 			})
 			.catch((error) => {
 				var incCredentials = document.getElementById("Incorrect-credentials");
@@ -32,7 +29,7 @@ const Login = () => {
 	};
 
 	const toSignUp = () => {
-		history.push("/signup");
+		window.location.href = "/signup"
 	};
 
 	return (

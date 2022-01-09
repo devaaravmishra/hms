@@ -1,20 +1,14 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
 import LoginDetails from "../Context/LoginContext";
 
 const Navbar = () => {
 	const { loggedIn, user } = useContext(LoginDetails);
-	const history = useHistory();
-	const refresh = () => {
-		window.location.reload(false);
-	};
 	return !loggedIn ? (
 		<div className={"navbar"}>
 			<div className={"nav-container"}>
 				<h1
 					onClick={() => {
-						history.push("/");
-						refresh();
+						window.location.href = "/"
 					}}
 					className={"nav-head"}
 				>
@@ -47,8 +41,7 @@ const Navbar = () => {
 			<div className={"nav-container"}>
 				<h1
 					onClick={() => {
-						history.push("/");
-						refresh();
+						window.location.href = "/"
 					}}
 					className={"nav-head"}
 				>
