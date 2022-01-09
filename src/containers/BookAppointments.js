@@ -1,12 +1,12 @@
 import Axios from "axios";
 import React, { useEffect, useState, useContext } from "react";
 
-import Footer from "./footer";
+import Footer from "../components/footer";
 import LoginDetails from "../context/LoginContext";
-import Navbar from "./navbar";
+import Navbar from "../components/navbar";
 
-import logo from "./imgs/Doctor_20.png";
-import "./css/form.css";
+import logo from "../components/imgs/Doctor_20.png";
+import "../components/css/form.css";
 
 const BookAppointments = () => {
 	const { user, loggedIn, baseURL } = useContext(LoginDetails);

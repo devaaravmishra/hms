@@ -1,12 +1,12 @@
 import Axios from "axios";
 import React, { useState, useContext } from "react";
 
-import Footer from "./footer";
+import Footer from "../components/footer";
 import LoginDetails from "../context/LoginContext";
-import Navbar from "./navbar";
+import Navbar from "../components/navbar";
 
-import logo from "./imgs/logo.png";
-import "./css/form.css";
+import logo from "../components/imgs/logo.png";
+import "../components/css/form.css";
 
 
 const Signup = () => {

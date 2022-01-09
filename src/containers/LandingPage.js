@@ -1,12 +1,12 @@
 import Axios from "axios";
 import React, { useEffect, useState, useContext } from "react";
 
-import AppointmentCard from "./appointmentCards";
-import Footer from "./footer";
+import AppointmentCard from "../components/appointmentCards";
+import Footer from "../components/footer";
 import LoginDetails from "../context/LoginContext";
-import Navbar from "./navbar";
+import Navbar from "../components/navbar";
 
-import "./css/main.css";
+import "../components/css/main.css";
 
 
 const LandingPage = () => {

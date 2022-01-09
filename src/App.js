@@ -7,12 +7,12 @@ import {
 } from "react-router-dom";
 
 import { BASE_URL } from "./config/base";
-import BookAppointments from "./components/BookAppointments";
-import LandingPage from "./components/LandingPage";
-import Login from "./components/Login";
+import BookAppointments from "./containers/BookAppointments";
+import LandingPage from "./containers/LandingPage";
+import Login from "./containers/Login";
 import LoginDetails from "./context/LoginContext";
 import HomePage from "./components/Home";
-import Signup from "./components/Signup";
+import Signup from "./containers/Signup";
 
 const App = () => {
 	const [user, setUser] = useState({});
