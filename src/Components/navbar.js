@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import LoginDetails from "../Context/LoginContext";
 
 const Navbar = () => {
-	const { loggedIn } = useContext(LoginDetails);
+	const { loggedIn, user } = useContext(LoginDetails);
 	const history = useHistory();
 	const refresh = () => {
 		window.location.reload(false);
@@ -57,7 +57,7 @@ const Navbar = () => {
 			</div>
 			<ul className={"nav-links"}>
 				<li>
-					<a href={"/appointmentpage"}>App</a>
+					<a href={"/appointmentpage"}>{user.name}</a>
 				</li>
 				<li>
 					<a href={"/appointments"}>Book Appoinment</a>
