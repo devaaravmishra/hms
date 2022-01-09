@@ -390,17 +390,18 @@ header {
 	}
 	.footer {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		align-items: center;
 		justify-content: center;
 		background: #02091a;
 		padding: 0;
+		height: 10vh;
 	}
 	#book-btn {
 		padding: 0.6rem 1.6rem;
 	}
 	#apt-bookmore-btn {
-		padding: 0.8rem 1rem;
+		padding: 0.7rem 1rem;
 		font-size: 0.8rem;
 	}
 	#logout-btn {
@@ -411,32 +412,31 @@ header {
 		font-size: 0.8rem;
 	}
 	.footer-left {
-		font-size: 1rem;
-		margin: 3% auto auto auto;
+		font-size: 0.7rem;
+		margin: 10% auto auto 8%;
 	}
 	.footer-right {
-		float: none;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		justify-content: center;
-		margin: 2% auto auto auto;
+		justify-content: center; 
+		margin: 8% 5% auto auto;
 		padding: 0;
 	}
 	.footer-right a {
-		height: 22px;
-		width: 22px;
+		height: 30px;
+		width: 30px;
 	}
 	.footer-bottom {
-		padding: 1% 0 3% 0;
+		padding: 6% 0 3% 0;
 	}
 	.footer-bottom-text {
 		font-size: 0.8rem;
 		margin-bottom: 3%;
 	}
 	.foot-icon {
-		font-size: 12px;
+		font-size: 14px;
 		position: relative;
-		top: -10px;
+		top: -6px;
 	}
 }
