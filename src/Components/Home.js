@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
-import "./css/main.css";
-import Header from "./header";
+import React, { useContext, useEffect } from "react";
+
 import Footer from "./footer";
-import { useEffect } from "react";
+import Header from "./header";
 import LoginDetails from "../Context/LoginContext";
+
+import "./css/main.css";
 
 const HomePage = () => {
 	const { loggedIn } = useContext(LoginDetails);

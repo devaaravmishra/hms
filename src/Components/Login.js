@@ -1,10 +1,12 @@
 import React, { useState, useContext } from "react";
 import Navbar from "./navbar";
-import Footer from "./footer";
 import Axios from "axios";
+
+import Footer from "./footer";
+import LoginDetails from "../Context/LoginContext";
+
 import logo from "./imgs/logo.png";
 import "./css/form.css";
-import LoginDetails from "../Context/LoginContext";
 
 const Login = () => {
 	const { setUser, baseURL } = useContext(LoginDetails);

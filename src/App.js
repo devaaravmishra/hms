@@ -6,13 +6,13 @@ import {
 	Switch,
 } from "react-router-dom";
 
-import Login from "./Components/Login";
-import Signup from "./Components/Signup";
-import HomePage from "./Components/Home";
-import LoginDetails from "./Context/LoginContext";
 import { BASE_URL } from "./config/base";
-import LandingPage from "./Components/LandingPage";
 import BookAppointments from "./Components/BookAppointments";
+import LandingPage from "./Components/LandingPage";
+import Login from "./Components/Login";
+import LoginDetails from "./Context/LoginContext";
+import HomePage from "./Components/Home";
+import Signup from "./Components/Signup";
 
 const App = () => {
 	const [user, setUser] = useState({});

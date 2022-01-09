@@ -1,4 +1,5 @@
 import React from "react";
+
 import logo from "./imgs/vaccine.png";
 
 const AppointmentCards = (props) => {

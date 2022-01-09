@@ -1,10 +1,13 @@
-import React, { useState, useContext } from "react";
-import Navbar from "./navbar";
-import Footer from "./footer";
 import Axios from "axios";
+import React, { useState, useContext } from "react";
+
+import Footer from "./footer";
+import LoginDetails from "../Context/LoginContext";
+import Navbar from "./navbar";
+
 import logo from "./imgs/logo.png";
 import "./css/form.css";
-import LoginDetails from "../Context/LoginContext";
+
 
 const Signup = () => {
 	const [user, setUser] = useState({});

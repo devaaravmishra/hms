@@ -1,11 +1,13 @@
-import React, { useEffect, useState, useContext } from "react";
-import Navbar from "./navbar";
-import Footer from "./footer";
-import "./css/form.css";
-import logo from "./imgs/Doctor_20.png";
-import LoginDetails from "../Context/LoginContext";
-
 import Axios from "axios";
+import React, { useEffect, useState, useContext } from "react";
+
+import Footer from "./footer";
+import LoginDetails from "../Context/LoginContext";
+import Navbar from "./navbar";
+
+import logo from "./imgs/Doctor_20.png";
+import "./css/form.css";
+
 const BookAppointments = () => {
 	const { user, loggedIn, baseURL } = useContext(LoginDetails);
 	const [appointment, setAppointment] = useState({});

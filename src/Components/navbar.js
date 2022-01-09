@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+
 import LoginDetails from "../Context/LoginContext";
 
 const Navbar = () => {

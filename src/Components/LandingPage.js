@@ -1,10 +1,13 @@
-import React, { useEffect, useState, useContext } from "react";
 import Axios from "axios";
-import Navbar from "./navbar";
-import Footer from "./footer";
+import React, { useEffect, useState, useContext } from "react";
+
 import AppointmentCard from "./appointmentCards";
-import "./css/main.css";
+import Footer from "./footer";
 import LoginDetails from "../Context/LoginContext";
+import Navbar from "./navbar";
+
+import "./css/main.css";
+
 
 const LandingPage = () => {
 	const { user, loggedIn, baseURL } = useContext(LoginDetails);
