@@ -30,22 +30,21 @@ const LandingPage = () => {
 					});
 			};
 			fetchAppointments();
-			if (!loggedIn) {
-				setTimeout(() => {
-					window.location.href = "/"
-				}, 10);
-			}
+		}
+		if (!loggedIn) {
+			window.alert("Login First... to view or book appointments!");
+			window.location.href = "/login";
 		}
 		// eslint-disable-next-line
 	}, [user]);
 
 	const BookMore = () => {
-		window.location.href = "/appointments"
+		window.location.href = "/appointments";
 	};
 
 	const onLogout = () => {
 		localStorage.clear();
-		window.location.href = "/"
+		window.location.href = "/";
 	};
 	const renderAppointments = appointments.map((appointment, index) => {
 		return <AppointmentCard appointment={appointment} key={index} />;
