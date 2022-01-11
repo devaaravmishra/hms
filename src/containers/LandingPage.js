@@ -28,12 +28,8 @@ const LandingPage = () => {
 							error
 						);
 					});
-			};
+			}
 			fetchAppointments();
-		}
-		if (!loggedIn) {
-			window.alert("Login First... to view or book appointments!");
-			window.location.href = "/login";
 		}
 		// eslint-disable-next-line
 	}, [user]);
