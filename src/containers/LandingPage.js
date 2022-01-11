@@ -3,6 +3,7 @@ import React, { useEffect, useState, useContext } from "react";
 
 import AppointmentCard from "../components/appointmentCards";
 import Footer from "../components/footer";
+import Loader from "../components/loader";
 import LoginDetails from "../context/LoginContext";
 import Navbar from "../components/navbar";
 
@@ -11,9 +12,11 @@ import "../assets/css/main.css";
 const LandingPage = () => {
 	const { user, loggedIn, baseURL } = useContext(LoginDetails);
 	const [appointments, setAppointments] = useState([]);
+	const [loading, setLoading] = useState(false)
 
 	useEffect(() => {
 		if (loggedIn) {
+			setLoading(true)
 			const fetchAppointments = async () => {
 				await Axios.get(`${baseURL}/user/getApt/${user._id}`)
 					.then(({ data: foundAppointments }) => {
@@ -21,6 +24,9 @@ const LandingPage = () => {
 							`Appointments were found for user with name:${user.name}`
 						);
 						setAppointments(foundAppointments);
+						setTimeout(() => {
+							setLoading(false);
+						}, 1000);
 					})
 					.catch((error) => {
 						console.error(
@@ -28,30 +34,25 @@ const LandingPage = () => {
 							error
 						);
 					});
-			};
-			fetchAppointments();
-			if (!loggedIn) {
-				setTimeout(() => {
-					window.location.href = "/"
-				}, 10);
 			}
+			fetchAppointments();
 		}
 		// eslint-disable-next-line
 	}, [user]);
 
 	const BookMore = () => {
-		window.location.href = "/appointments"
+		window.location.href = "/appointments";
 	};
 
 	const onLogout = () => {
 		localStorage.clear();
-		window.location.href = "/"
+		window.location.href = "/";
 	};
 	const renderAppointments = appointments.map((appointment, index) => {
 		return <AppointmentCard appointment={appointment} key={index} />;
 	});
 
-	return (
+	return !loading ? (
 		<React.Fragment>
 			<div id={"apt-container"}>
 				<Navbar />
@@ -72,6 +73,8 @@ const LandingPage = () => {
 			</div>
 			<Footer />
 		</React.Fragment>
-	);
+	) : (
+		<Loader/>
+	)
 };
 export default LandingPage;

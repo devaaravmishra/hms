@@ -23,7 +23,6 @@ const App = () => {
 		const savedUser = localStorage.getItem("user");
 		if (!loggedIn && savedUser) {
 			setUser(JSON.parse(savedUser).user);
-			console.log(user);
 			setLoggedIn(true);
 		}
 		// eslint-disable-next-line

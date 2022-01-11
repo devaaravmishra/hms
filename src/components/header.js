@@ -8,7 +8,7 @@ const Header = () => {
       <Navbar/>
       <div className={"welcome-container"}>
         <h1 className={"welcome-head"}>Stay Safe and Secure</h1>
-        <a href="#footer">
+        <a href="https://github.com/Aarav619/hms-frontend">
           <button className={"about-us"}>About-us</button>
         </a>
       </div>
