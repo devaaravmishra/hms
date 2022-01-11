@@ -9,17 +9,8 @@ import logo from "../assets/imgs/Doctor_20.png";
 import "../assets/css/form.css";
 
 const BookAppointments = () => {
-	const { user, loggedIn, baseURL } = useContext(LoginDetails);
+	const { user, baseURL } = useContext(LoginDetails);
 	const [appointment, setAppointment] = useState({});
-
-	useEffect(() => {
-		if (!loggedIn) {
-			window.alert("Login to make an appointment");
-			setTimeout(() => {
-				window.location.href = "/login"
-			}, 50);
-		}
-	});
 
 	const onMakeAppointment = async (e) => {
 		e.preventDefault();
