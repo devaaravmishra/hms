@@ -68,7 +68,7 @@
   border-radius: 9px;
 }
 .input-container {
-  margin: 2rem 0 0 0;
+  margin: 1.2rem 0 1.2rem 0;
   display: flex;
   width: 100%;
 }
@@ -281,8 +281,8 @@
   }
 
   #login-container img {
-    height: 25vh;
-    margin-bottom: 3%;
+    height: 25%;
+    margin-bottom: 1%;
   }
 
   .logininput {
@@ -295,34 +295,26 @@
   .slots-desc{
     font-size: 0.6rem;
   }
-  #submit {
-    height: 2.5rem;
-    width: 5rem;
-    font-size: 1rem;
-    margin: 6% auto 6% auto;
-  }
-  
   .spantext{
-    font-size: 0.8rem;
+    margin: 5% 0 0 0;
+    font-size: 0.7rem;
   }
   
   #lastbtn {
-    height: 2.5rem;
-    width: 5rem;
-    font-size: 1rem;
-    margin-top: 7%;
+    margin: 5% auto auto auto;
   }
 
   #signin-container {
     width: 100%;
-    padding: 1.5rem;
+    padding: 0 auto 0 auto;
+    margin: 0;
   }
 
   #signin-container img {
-    height: 25vh;
-    margin-bottom: 2%;
+    height: 25%;
+    margin-bottom: 1%;
   }
-  #signin-container #submit {
-    margin: 2% auto auto auto;
+  #submit {
+    margin: 5% auto auto auto;
   }
 }
