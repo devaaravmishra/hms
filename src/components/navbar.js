@@ -9,10 +9,9 @@ const Navbar = () => {
 			<div className={"nav-container"}>
 				<h1
 					onClick={() => {
-						window.location.href = "/"
+						window.location.href = "/";
 					}}
-					className={"nav-head"}
-				>
+					className={"nav-head"}>
 					HMS
 				</h1>
 			</div>
@@ -30,8 +29,7 @@ const Navbar = () => {
 					<a
 						rel="noreferrer"
 						href={"https://github.com/Aarav619/hms-frontend"}
-						target={"_blank"}
-					>
+						target={"_blank"}>
 						About-Us
 					</a>
 				</li>
@@ -42,10 +40,9 @@ const Navbar = () => {
 			<div className={"nav-container"}>
 				<h1
 					onClick={() => {
-						window.location.href = "/"
+						window.location.href = "/";
 					}}
-					className={"nav-head"}
-				>
+					className={"nav-head"}>
 					HMS
 				</h1>
 			</div>
@@ -60,8 +57,7 @@ const Navbar = () => {
 					<a
 						rel="noreferrer"
 						href={"https://github.com/Aarav619/hms-frontend"}
-						target={"_blank"}
-					>
+						target={"_blank"}>
 						About-Us
 					</a>
 				</li>

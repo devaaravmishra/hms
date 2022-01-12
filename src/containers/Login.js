@@ -19,11 +19,13 @@ const Login = () => {
 				console.info(data);
 				localStorage.setItem("user", JSON.stringify(data));
 				setUser(data.user);
-				window.location.href = "/appointmentpage"
+				window.location.href = "/appointmentpage";
 			})
 			.catch((error) => {
-				var incCredentials = document.getElementById("Incorrect-credentials");
-        		incCredentials.style.display="block";
+				var incCredentials = document.getElementById(
+					"Incorrect-credentials"
+				);
+				incCredentials.style.display = "block";
 			})
 			.finally(() => {
 				console.info("Login API call finished.");
@@ -31,7 +33,7 @@ const Login = () => {
 	};
 
 	const toSignUp = () => {
-		window.location.href = "/signup"
+		window.location.href = "/signup";
 	};
 
 	return (
@@ -73,12 +75,13 @@ const Login = () => {
 								}}
 							/>
 						</div>
-						<div id={"Incorrect-credentials"}>Incorrect Email or Password!</div>
+						<div id={"Incorrect-credentials"}>
+							Incorrect Email or Password!
+						</div>
 						<button
 							id={"submit"}
 							type={"submit"}
-							onClick={onFormSubmit}
-						>
+							onClick={onFormSubmit}>
 							Login
 						</button>
 						<span className={"spantext"}>
@@ -87,8 +90,7 @@ const Login = () => {
 						<button
 							id={"lastbtn"}
 							type={"button"}
-							onClick={toSignUp}
-						>
+							onClick={toSignUp}>
 							Sign Up
 						</button>
 					</form>

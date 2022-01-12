@@ -12,11 +12,11 @@ import "../assets/css/main.css";
 const LandingPage = () => {
 	const { user, loggedIn, baseURL } = useContext(LoginDetails);
 	const [appointments, setAppointments] = useState([]);
-	const [loading, setLoading] = useState(false)
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		if (loggedIn) {
-			setLoading(true)
+			setLoading(true);
 			const fetchAppointments = async () => {
 				await Axios.get(`${baseURL}/user/getApt/${user._id}`)
 					.then(({ data: foundAppointments }) => {
@@ -34,7 +34,7 @@ const LandingPage = () => {
 							error
 						);
 					});
-			}
+			};
 			fetchAppointments();
 		}
 		// eslint-disable-next-line
@@ -74,7 +74,7 @@ const LandingPage = () => {
 			<Footer />
 		</React.Fragment>
 	) : (
-		<Loader/>
-	)
+		<Loader />
+	);
 };
 export default LandingPage;

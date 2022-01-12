@@ -118,8 +118,7 @@ const BookAppointments = () => {
 						<button
 							id={"submit"}
 							type={"submit"}
-							onClick={onMakeAppointment}
-						>
+							onClick={onMakeAppointment}>
 							Book
 						</button>
 					</form>
