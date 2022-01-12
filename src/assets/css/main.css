@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -41,10 +42,11 @@ body {
 }
 .nav-head {
 	cursor: pointer;
-	font-size: 2rem;
+	font-size: 4rem;
 	text-transform: uppercase;
-	letter-spacing: 2px;
+	letter-spacing: 6px;
 	color: #fff;
+	font-family: "Patrick Hand", cursive;
 }
 
 .nav-links {
@@ -346,18 +348,18 @@ header {
 	transition: 0.3s ease all;
 }
 
-@media (max-width: 725px) {
+@media (max-width: 820px) {
 	.navbar {
 		padding: 1rem;
 	}
 	.navbar .nav-container .nav-head {
-		font-size: 0.7rem;
+		font-size: 1.3rem;
 	}
 	.nav-links li a {
 		font-size: 0.6rem;
 		margin: 1rem 0.4rem;
 	}
-	.welcome-container .welcome-head {
+	#welcome-head {
 		font-size: 1.6rem;
 	}
 	.services .container1 {
@@ -411,6 +413,20 @@ header {
 	#Appointment-sub-head {
 		font-size: 0.8rem;
 	}
+	.card {
+		width: 45%;
+		display: flex;
+		flex-direction: column;
+	}
+	.card-img-top {
+		width: auto;
+	}
+	.card-body {
+		font-size: 0.6rem;
+	}
+	.card-body h5 {
+		font-size: 0.8rem;
+	}
 	.footer-left {
 		font-size: 0.7rem;
 		margin: 10% auto auto 8%;
@@ -419,7 +435,7 @@ header {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		justify-content: center; 
+		justify-content: center;
 		margin: 8% 5% auto auto;
 		padding: 0;
 	}
@@ -438,5 +454,52 @@ header {
 		font-size: 14px;
 		position: relative;
 		top: -6px;
+	}
+}
+
+@media (max-width: 300px) {
+	.navbar .nav-container .nav-head {
+		font-size: 0.8rem;
+	}
+	.nav-links li a {
+		font-size: 0.4rem;
+		margin: 1rem 0.3rem;
+	}
+	#welcome-head {
+		font-size: 1.5rem;
+	}
+	#Appointment-sub-head {
+		font-size: 0.6rem;
+	}
+	#book-btn {
+		padding: 0.4rem 1.3rem;
+	}
+	#apt-bookmore-btn {
+		padding: 0.7rem 1rem;
+		font-size: 0.8rem;
+	}
+	#logout-btn {
+		padding: 0.7rem 1.2rem;
+		font-size: 0.8rem;
+	}
+	.card-body {
+		font-size: 0.49rem;
+	}
+	.card-body h5 {
+		font-size: 0.6rem;
+	}
+	.footer-left {
+		font-size: 0.43rem;
+	}
+	.footer-right a {
+		line-height: 35px;
+		height: 22px;
+		width: 22px;
+	}
+	.footer-bottom {
+		padding: 3% 0 3% 0;
+	}
+	.footer-bottom-text {
+		font-size: 0.6rem;
 	}
 }

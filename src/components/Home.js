@@ -11,12 +11,12 @@ const HomePage = () => {
 
 	useEffect(() => {
 		if (loggedIn) {
-			window.location.href = "/appointmentpage"
+			window.location.href = "/appointmentpage";
 		}
 	});
 
 	const onAppointmentBook = () => {
-		window.location.href = "/login"
+		window.location.href = "/login";
 	};
 
 	return (

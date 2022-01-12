@@ -8,7 +8,6 @@ import Navbar from "../components/navbar";
 import logo from "../assets/imgs/logo.png";
 import "../assets/css/form.css";
 
-
 const Signup = () => {
 	const [user, setUser] = useState({});
 	const { baseURL } = useContext(LoginDetails);
@@ -18,7 +17,7 @@ const Signup = () => {
 			.then(({ data }) => {
 				console.info(data);
 				localStorage.setItem("user", JSON.stringify(data));
-				window.location.href = "/"
+				window.location.href = "/";
 			})
 			.catch((error) => {
 				console.error(error);
@@ -35,7 +34,6 @@ const Signup = () => {
 				<div className={"parent-container"}>
 					<form id={"signin-container"}>
 						<img src={logo} alt={"Health Insurance"} />
-						<br />
 						<div className={"input-container"}>
 							<i className={"fa fa-user icon"}></i>
 							<input
@@ -62,7 +60,7 @@ const Signup = () => {
 								}}
 							/>
 						</div>
-						<div className="input-container">
+						<div className={"input-container"}>
 							<i className="fa fa-fingerprint icon"></i>
 							<input
 								className={"logininput"}
@@ -78,8 +76,8 @@ const Signup = () => {
 								}}
 							/>
 						</div>
-						<div className="input-container">
-							<i className="fa fa-clock icon"></i>
+						<div className={"input-container"}>
+							<i className={"fa fa-clock icon"}></i>
 							<input
 								className={"logininput"}
 								type={"number"}
@@ -94,9 +92,8 @@ const Signup = () => {
 						<button
 							id={"submit"}
 							type={"submit"}
-							onClick={onFormSubmit}
-						>
-							Create
+							onClick={onFormSubmit}>
+							Sign Up
 						</button>
 					</form>
 				</div>

@@ -1,64 +1,64 @@
-.parent{
-    background-color:#28343c;
-    margin: 0;
-    text-align: center;
-    width: 100%;
-    height: 100vh;
+.parent {
+	background-color: #28343c;
+	margin: 0;
+	text-align: center;
+	width: 100%;
+	height: 100vh;
 }
-.loader-head{
-    margin: 0 auto;
-    padding: 20% 0 5% 0;
-    font-size: 3rem;
-    font-weight: bold;
-    font-family: "Varela Round", sans-serif;
-    color:#FFF ;
-    z-index: 1;
+.loader-head {
+	margin: 0 auto;
+	padding: 20% 0 5% 0;
+	font-size: 3rem;
+	font-weight: bold;
+	font-family: "Varela Round", sans-serif;
+	color: #fff;
+	z-index: 1;
 }
-.loader{
-  width: 48px;
-  height: 48px;
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  border: 3px solid #FFF;
-  border-radius: 50%;
-  box-sizing: border-box;
-  animation: animloader 2s linear infinite;
+.loader {
+	width: 48px;
+	height: 48px;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	box-sizing: border-box;
+	animation: animloader 2s linear infinite;
 }
 .loader::after {
-  content: '';  
-  box-sizing: border-box;
-  width: 6px;
-  height: 24px;
-  background: #FFF;
-  transform: rotate(-45deg);
-  position: absolute;
-  bottom: -20px;
-  left: 46px;
+	content: "";
+	box-sizing: border-box;
+	width: 6px;
+	height: 24px;
+	background: #fff;
+	transform: rotate(-45deg);
+	position: absolute;
+	bottom: -20px;
+	left: 46px;
 }
 
 @keyframes animloader {
-  0% {
-    transform: translate(-10px, -10px);
-  }
-  25% {
-    transform: translate(-10px, 10px);
-  }
-  50% {
-    transform: translate(10px, 10px);
-  }
-  75% {
-    transform: translate(10px, -10px);
-  }
-  100% {
-    transform: translate(-10px, -10px);
-  }
+	0% {
+		transform: translate(-10px, -10px);
+	}
+	25% {
+		transform: translate(-10px, 10px);
+	}
+	50% {
+		transform: translate(10px, 10px);
+	}
+	75% {
+		transform: translate(10px, -10px);
+	}
+	100% {
+		transform: translate(-10px, -10px);
+	}
 }
 
 @media only screen and (max-width: 600px) {
-    .loader-head{
-        margin: 0 auto;
-        padding: 23rem 0 2rem 0;
-        font-size: 1.4rem;
-    }
+	.loader-head {
+		margin: 0 auto;
+		padding: 23rem 0 2rem 0;
+		font-size: 1.4rem;
+	}
 }
