@@ -36,8 +36,6 @@ const BookAppointments = () => {
 				<div className={"parent-container"}>
 					<form id={"login-container"}>
 						<img src={logo} alt={"Health Insurance"} />
-						<br />
-						<br />
 						<div className={"input-container"}>
 							<i className={"fa fa-calendar-check icon"}></i>
 							<input
@@ -54,14 +52,10 @@ const BookAppointments = () => {
 								}}
 							/>
 						</div>
-						<br />
-						<br />
 						<div className={"radio-container"}>
 							<h3 id={"radio-container-head"}>
 								Choose time slot
 							</h3>
-							<br />
-							<br />
 							<label>
 								<input
 									className={"radio"}
@@ -113,13 +107,12 @@ const BookAppointments = () => {
 								<span className={"radio-text"}>3</span>
 							</label>
 							<br />
-							<br />
-							<span className={"slots-desc"}>1. 7AM - 10AM</span>
+							<span className={"slots-desc"}>(1) 7AM - 10AM</span>
 							<span className={"slots-desc"}>
-								&nbsp;&nbsp;2. 12PM - 4PM
+								&nbsp;&nbsp;(2) 12PM - 4PM
 							</span>
 							<span className={"slots-desc"}>
-								&nbsp;&nbsp;3. 6PM - 11 PM
+								&nbsp;&nbsp;(3) 6PM - 11PM
 							</span>
 						</div>
 						<button
@@ -129,9 +122,6 @@ const BookAppointments = () => {
 						>
 							Book
 						</button>
-						<br />
-						<br />
-						<br />
 					</form>
 				</div>
 			</div>
