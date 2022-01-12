@@ -13,7 +13,7 @@ const Navbar = () => {
 					}}
 					className={"nav-head"}
 				>
-					Hospital
+					HMS
 				</h1>
 			</div>
 			<ul className={"nav-links"}>
@@ -46,7 +46,7 @@ const Navbar = () => {
 					}}
 					className={"nav-head"}
 				>
-					Hospital
+					HMS
 				</h1>
 			</div>
 			<ul className={"nav-links"}>
