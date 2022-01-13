@@ -52,6 +52,11 @@ Start the server
 
 ![landing-page](Screenshots/Landing-page.png)
 
+![mobile-landing-page](Screenshots/mobile-landing-page.png)
+
+![mobile-login-page](Screenshots/mobile-login.png)
+
+
 ## Feedback
 
 If you have any feedback, please reach out to us at aaravmishra619@gmail.com
