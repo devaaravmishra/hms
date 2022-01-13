@@ -52,7 +52,7 @@ Start the server
 
 ![landing-page](Screenshots/Landing-page.png)
 
-![mobile-landing-page](Screenshots/mobile-landing-page.png) ![mobile-login-page](Screenshots/mobile-login.png)
+![mobile-landing-page](Screenshots/mobile-landing-page.png)  ![mobile-login-page](Screenshots/mobile-login.png)
 
 
 ## Feedback
