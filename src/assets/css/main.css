@@ -413,9 +413,16 @@ header {
 	#Appointment-sub-head {
 		font-size: 0.8rem;
 	}
+
+	#appointments-cards {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 	.card {
 		width: 45%;
 		display: flex;
+		margin: 10% 0 0 25%;
 		flex-direction: column;
 	}
 	.card-img-top {
