@@ -2,7 +2,12 @@
 # Hospital Management System
 
 
-![home-page](Screenshots/home-page.png)
+<a href="https://hmsreact.vercel.app/">
+  <img
+    alt="App Screenshot"
+    src="Screenshots/home-page.png"
+  />
+</a>
 
 ## Description
 
